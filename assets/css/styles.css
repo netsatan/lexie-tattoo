@@ -410,11 +410,11 @@ a:hover {
        Use a dedicated "soft circle" mask that is fully transparent at the edges,
        so it never shows hard cuts/lines on any breakpoint. */
     --prism-size: clamp(650px, 78vw, 850px);
-    --prism-left: 50%;
-    --prism-top: 58%;
+    --prism-left: 48%;
+    --prism-top: 45%;
     --prism-alpha: 1;
-    --prism-img-x: 95%;
-    --prism-img-y: 75%;
+    --prism-img-x: 100%;
+    --prism-img-y: -30px;
 }
 
 .hero .container {
@@ -466,7 +466,7 @@ a:hover {
     aspect-ratio: 1 / 1;
     left: var(--prism-left);
     top: var(--prism-top);
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -50%);
 
     background: url("../img/prism_bg.jpeg") var(--prism-img-x)
         var(--prism-img-y) / cover no-repeat;
@@ -476,14 +476,14 @@ a:hover {
     -webkit-mask-image: radial-gradient(
         circle farthest-side at 50% 50%,
         #000 0%,
-        #000 36%,
-        rgba(0, 0, 0, 0) 80%
+        #000 30%,
+        rgba(0, 0, 0, 0) 83%
     );
     mask-image: radial-gradient(
         circle farthest-side at 50% 50%,
         #000 0%,
-        #000 36%,
-        rgba(0, 0, 0, 0) 80%
+        #000 30%,
+        rgba(0, 0, 0, 0) 83%
     );
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -491,6 +491,17 @@ a:hover {
     mask-size: 110% 100%;
 
     filter: saturate(0.95) contrast(0.95);
+}
+
+@media (prefers-color-scheme: light) {
+    .hero__imageWrap::after {
+        mask-image: radial-gradient(
+            circle farthest-side at 50% 50%,
+            #000 0%,
+            #000 45%,
+            rgba(0, 0, 0, 0) 83%
+        );
+    }
 }
 
 /* Sylwetka nad tłem i glow */
@@ -548,11 +559,11 @@ a:hover {
 @media (max-width: 900px) {
     .hero {
         /* Mobile tuning */
-        --prism-size: clamp(360px, 112vw, 520px);
+        --prism-size: clamp(365px, 145vw, 560px);
         --prism-top: 54%;
-        --prism-img-x: 52%;
-        --prism-img-y: 60%;
-        --prism-alpha: 0.85;
+        --prism-img-x: 90%;
+        --prism-img-y: 63%;
+        --prism-alpha: 1;
     }
 
     .hero__grid {
@@ -576,11 +587,17 @@ a:hover {
     }
 
     .hero__image {
-        width: min(320px, 78vw);
+        width: min(320px, 65vw);
     }
 
     .hero__imageWrap::after {
-        background-size: 120% 120%;
+        background-size: 110% 110%;
+        mask-image: radial-gradient(
+            circle farthest-side at 50% 50%,
+            #000 0%,
+            #000 36%,
+            rgba(0, 0, 0, 0) 90%
+        );
     }
 }
 
