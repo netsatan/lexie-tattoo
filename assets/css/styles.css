@@ -519,17 +519,24 @@ a:hover {
 }
 
 .hero__title {
-    text-align: center;
-    font-family: "Chomsky", ui-serif, Georgia, serif;
-    margin: 10px 0 0;
-    font-size: clamp(9.5vh, 12vw, 15vh);
-    line-height: 1.05;
-    letter-spacing: -0.131em;
+    display: flex;
+    justify-content: center;
     padding-top: 6vh;
     -webkit-user-drag: none;
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
+}
+
+.hero__logo {
+    width: clamp(280px, 48vw, 760px);
+    aspect-ratio: 900 / 220;
+    background: var(--text);
+
+    -webkit-mask: url("../img/logotyp.svg") center / contain no-repeat;
+    mask: url("../img/logotyp.svg") center / contain no-repeat;
+    mask-mode: alpha;
+    -webkit-mask-mode: alpha;
 }
 
 .hero__kicker {
