@@ -521,7 +521,7 @@ a:hover {
 .hero__title {
     display: flex;
     justify-content: center;
-    padding-top: 6vh;
+    padding-top: 1vh;
     -webkit-user-drag: none;
     user-select: none;
     -webkit-user-select: none;
