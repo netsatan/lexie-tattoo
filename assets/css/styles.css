@@ -532,6 +532,7 @@ a:hover {
     width: clamp(280px, 48vw, 760px);
     aspect-ratio: 900 / 220;
     background: var(--text);
+    transform: translateZ(0);
 
     -webkit-mask: url("../img/logotyp.svg") center / contain no-repeat;
     mask: url("../img/logotyp.svg") center / contain no-repeat;
