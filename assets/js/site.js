@@ -80,7 +80,7 @@ export function setYear() {
 
 export function preventWidows(root = document) {
   const nodes = root.querySelectorAll(
-    "p, h1, h2, h3, h4, li, .hero__kicker, .muted"
+    "p, h1, h2, h3, h4, li, .hero__kicker, .muted",
   );
   nodes.forEach((el) => {
     const txt = el.textContent || "";
@@ -146,7 +146,7 @@ function clearFieldError(el) {
 
 function validateName(el) {
   const v = normalizeSpaces(el.value);
-  if (!v) return setFieldError(el, "Podaj imię i nazwisko."), false;
+  if (!v) return (setFieldError(el, "Podaj imię i nazwisko."), false);
   if (!NAME_RE.test(v))
     return (
       setFieldError(el, "Podaj poprawne imię i nazwisko (2–60 znaków)."),
@@ -158,18 +158,21 @@ function validateName(el) {
 
 function validatePhone(el) {
   const v = normalizeSpaces(el.value);
-  if (!v) return setFieldError(el, "Podaj numer telefonu."), false;
+  if (!v) return (setFieldError(el, "Podaj numer telefonu."), false);
   if (!PHONE_RE.test(v))
-    return setFieldError(el, "Podaj poprawny numer telefonu."), false;
+    return (setFieldError(el, "Podaj poprawny numer telefonu."), false);
   clearFieldError(el);
   return true;
 }
 
 function validateMessage(el) {
   const v = String(el.value || "").trim();
-  if (!v) return setFieldError(el, "Napisz kilka słów o tatuażu."), false;
+  if (!v) return (setFieldError(el, "Napisz kilka słów o tatuażu."), false);
   if (v.length < 10)
-    return setFieldError(el, "Wiadomość jest zbyt krótka (min. 10 znaków)."), false;
+    return (
+      setFieldError(el, "Wiadomość jest zbyt krótka (min. 10 znaków)."),
+      false
+    );
   clearFieldError(el);
   return true;
 }
@@ -202,9 +205,8 @@ async function ensureUploadcareComponents() {
       !!qs("uc-upload-ctx-provider") || !!qs("uc-file-uploader-minimal");
     if (!hasUc) return;
 
-    const UC = await import(
-      "https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/file-uploader.min.js"
-    );
+    const UC =
+      await import("https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/file-uploader.min.js");
     UC.defineComponents(UC);
 
     // Wait until main element is registered.
@@ -420,7 +422,7 @@ function ensureFreePatternModal() {
 
             <div class="field">
               <label for="fp_msg">Wiadomość</label>
-              <textarea id="fp_msg" name="entry.839337160" rows="5" required></textarea>
+              <textarea id="fp_msg" name="entry.839337160" rows="3" required></textarea>
             </div>
 
             <button class="btn btn--primary" type="submit">Wyślij</button>
@@ -442,7 +444,9 @@ function ensureFreePatternModal() {
 
   const close = () => closeFreePatternModal();
 
-  qsa("[data-close]", modal).forEach((el) => el.addEventListener("click", close));
+  qsa("[data-close]", modal).forEach((el) =>
+    el.addEventListener("click", close),
+  );
 
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
@@ -494,10 +498,13 @@ function setupFreePatternForm(modal) {
     if (statusEl) statusEl.textContent = "Wysyłanie…";
 
     const imgUrl = String(
-      modal.dataset.fpImgUrl || qs("#fp_img", modal)?.getAttribute("src") || ""
+      modal.dataset.fpImgUrl || qs("#fp_img", modal)?.getAttribute("src") || "",
     );
 
-    const hiddenMessage = buildFreePatternMessageForSubmit(msgEl?.value || "", imgUrl);
+    const hiddenMessage = buildFreePatternMessageForSubmit(
+      msgEl?.value || "",
+      imgUrl,
+    );
     const restore = setHiddenMessageField(form, msgEl, hiddenMessage);
 
     try {

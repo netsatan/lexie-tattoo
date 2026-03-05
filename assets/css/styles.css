@@ -34,10 +34,10 @@
 }
 
 @font-face {
-    font-family: "Chomsky";
+    font-family: "raustila-Regular";
     src:
-        url("../fonts/Chomsky.woff2") format("woff2"),
-        url("../fonts/Chomsky.woff") format("woff");
+        url("../fonts/raustila-Regular.woff2") format("woff2"),
+        url("../fonts/raustila-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -64,6 +64,7 @@ body {
         Arial,
         "Apple Color Emoji",
         "Segoe UI Emoji";
+    font-size: 14px;
     line-height: 1.45;
     letter-spacing: 0.2px;
     position: relative;
@@ -529,7 +530,7 @@ a:hover {
 }
 
 .hero__logo {
-    width: clamp(520px, 48vw, 760px);
+    width: clamp(520px, 40vw, 760px);
     aspect-ratio: 1200 / 380;
     background-color: var(--text);
     display: block;
@@ -619,6 +620,12 @@ a:hover {
     }
 }
 
+@media (max-height: 920px) {
+    .hero__image {
+        width: 90%;
+    }
+}
+
 @media (max-width: 600px) {
     .hero__actions {
         gap: 10px;
@@ -684,12 +691,11 @@ a:hover {
 }
 
 .page-title {
-    font-size: clamp(28px, 4.5vh, 54px);
-    font-family: "Chomsky", ui-serif, Georgia, serif;
+    font-size: clamp(32px, 5vh, 54px);
+    font-family: "raustila-Regular", ui-serif, Georgia, serif;
     text-align: center;
     display: block;
     padding: 4vh 0;
-    letter-spacing: -0.05em;
     margin: 0;
 }
 
