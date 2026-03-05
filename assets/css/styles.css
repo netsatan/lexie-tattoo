@@ -591,16 +591,12 @@ a:hover {
     }
 
     .hero__imageWrap {
-        width: min(360px, 70vw);
+        width: min(320px, 55vw);
         margin-inline: auto;
         margin-top: 10px;
         display: flex;
         align-items: flex-end;
         justify-content: center;
-    }
-
-    .hero__image {
-        width: min(320px, 65vw);
     }
 
     .hero__imageWrap::after {
