@@ -618,7 +618,7 @@ a:hover {
 
 @media (max-height: 920px) {
     .hero__actions {
-        gap: 10px;
+        gap: 20px;
         justify-content: center;
     }
 }
