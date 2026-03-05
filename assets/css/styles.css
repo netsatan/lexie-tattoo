@@ -591,7 +591,7 @@ a:hover {
     }
 
     .hero__imageWrap {
-        width: min(360px, 92vw);
+        width: min(360px, 70vw);
         margin-inline: auto;
         margin-top: 10px;
         display: flex;
@@ -621,12 +621,6 @@ a:hover {
 }
 
 @media (max-height: 920px) {
-    .hero__image {
-        width: 90%;
-    }
-}
-
-@media (max-width: 600px) {
     .hero__actions {
         gap: 10px;
         justify-content: center;
