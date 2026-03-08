@@ -1580,7 +1580,7 @@ html.home main > section {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 14px 16px;
+    padding: 14px 25px;
     border: 0;
     background: var(--bg);
     color: var(--text);
