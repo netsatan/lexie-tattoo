@@ -1,14 +1,7 @@
 {
   "version": 2,
   "updated": "2026-03-09",
-  "featuredOrder": [
-    "p01",
-    "p06",
-    "p02",
-    "p04",
-    "p03",
-    "p08"
-  ],
+  "featuredOrder": ["p01", "p06", "p02", "p04", "p03", "p08"],
   "groups": [
     {
       "id": "wolne-wzory",
@@ -496,3 +489,4 @@
       "featured": false
     }
   ]
+}
