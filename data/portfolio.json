@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-02-08",
+  "updated": "2026-03-09",
   "featuredOrder": ["p01", "p06", "p02", "p04", "p03", "p08"],
   "groups": [
     {
@@ -61,6 +61,402 @@
       "id": "p07",
       "src": "../assets/img/portfolio/mucha2.png",
       "alt": "Alfons Mucha – Księżyc",
+      "featured": false
+    },
+    {
+      "id": "p08",
+      "src": "../assets/img/portfolio/63CB16A0-74BC-495E-8A9A-B969F11D374A.JPG",
+      "alt": "Klucz",
+      "featured": false
+    },
+    {
+      "id": "p09",
+      "src": "../assets/img/portfolio/B46AD5C0-A50B-4944-81C2-2032D06F628F.JPG",
+      "alt": "Klucz",
+      "featured": false
+    },
+    {
+      "id": "p10",
+      "src": "../assets/img/portfolio/BE4F6554-1999-4043-BA6F-2F19AFC8420B.JPG",
+      "alt": "Baba",
+      "featured": false
+    },
+    {
+      "id": "p11",
+      "src": "../assets/img/portfolio/E36CED7F-8962-40D3-9007-6F81DFA22339.JPG",
+      "alt": "Babo-kwiat",
+      "featured": false
+    },
+    {
+      "id": "p12",
+      "src": "../assets/img/portfolio/E36CED7F-8962-40D3-9007-6F81DFA22339.JPG",
+      "alt": "Babo-kwiat",
+      "featured": false
+    },
+    {
+      "id": "p_3944",
+      "src": "../assets/img/portfolio/107.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9025",
+      "src": "../assets/img/portfolio/115.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9857",
+      "src": "../assets/img/portfolio/125.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_4487",
+      "src": "../assets/img/portfolio/143.jpeg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5595",
+      "src": "../assets/img/portfolio/159.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9622",
+      "src": "../assets/img/portfolio/163.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3072",
+      "src": "../assets/img/portfolio/167.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_4574",
+      "src": "../assets/img/portfolio/180.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5800",
+      "src": "../assets/img/portfolio/223.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6820",
+      "src": "../assets/img/portfolio/229.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_1784",
+      "src": "../assets/img/portfolio/239.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7711",
+      "src": "../assets/img/portfolio/243.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5319",
+      "src": "../assets/img/portfolio/269.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5846",
+      "src": "../assets/img/portfolio/283.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6165",
+      "src": "../assets/img/portfolio/314.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_1782",
+      "src": "../assets/img/portfolio/318.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7595",
+      "src": "../assets/img/portfolio/325.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9993",
+      "src": "../assets/img/portfolio/328.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_4501",
+      "src": "../assets/img/portfolio/427.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5886",
+      "src": "../assets/img/portfolio/456.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_1489",
+      "src": "../assets/img/portfolio/61.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5687",
+      "src": "../assets/img/portfolio/62.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_8331",
+      "src": "../assets/img/portfolio/66.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7345",
+      "src": "../assets/img/portfolio/69.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5799",
+      "src": "../assets/img/portfolio/74.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_8442",
+      "src": "../assets/img/portfolio/.DS_Store",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3052",
+      "src": "../assets/img/portfolio/63CB16A0-74BC-495E-8A9A-B969F11D374A.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7458",
+      "src": "../assets/img/portfolio/B46AD5C0-A50B-4944-81C2-2032D06F628F.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5431",
+      "src": "../assets/img/portfolio/BE4F6554-1999-4043-BA6F-2F19AFC8420B.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5827",
+      "src": "../assets/img/portfolio/E36CED7F-8962-40D3-9007-6F81DFA22339.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5765",
+      "src": "../assets/img/portfolio/F256D8E8-020E-478E-B5A5-149E5CD23910.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3112",
+      "src": "../assets/img/portfolio/IMG_0852.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7082",
+      "src": "../assets/img/portfolio/IMG_5105.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_5784",
+      "src": "../assets/img/portfolio/IMG_5109.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9742",
+      "src": "../assets/img/portfolio/IMG_5395.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_4874",
+      "src": "../assets/img/portfolio/IMG_5478.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6285",
+      "src": "../assets/img/portfolio/IMG_5906.jpg",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3476",
+      "src": "../assets/img/portfolio/IMG_6664.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3324",
+      "src": "../assets/img/portfolio/IMG_6817.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6659",
+      "src": "../assets/img/portfolio/IMG_7143.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7131",
+      "src": "../assets/img/portfolio/IMG_7302.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_2463",
+      "src": "../assets/img/portfolio/IMG_7542.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_8329",
+      "src": "../assets/img/portfolio/IMG_7573.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_8129",
+      "src": "../assets/img/portfolio/IMG_7810.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6903",
+      "src": "../assets/img/portfolio/IMG_7811.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_2460",
+      "src": "../assets/img/portfolio/IMG_7812.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9179",
+      "src": "../assets/img/portfolio/IMG_7815.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6614",
+      "src": "../assets/img/portfolio/IMG_7848.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_4738",
+      "src": "../assets/img/portfolio/IMG_7923.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3323",
+      "src": "../assets/img/portfolio/IMG_7930.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7875",
+      "src": "../assets/img/portfolio/IMG_7968.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3679",
+      "src": "../assets/img/portfolio/IMG_7982.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7974",
+      "src": "../assets/img/portfolio/IMG_7987.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_1085",
+      "src": "../assets/img/portfolio/IMG_8258.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_7062",
+      "src": "../assets/img/portfolio/IMG_8314.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_9903",
+      "src": "../assets/img/portfolio/IMG_8384.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6710",
+      "src": "../assets/img/portfolio/IMG_8784.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6933",
+      "src": "../assets/img/portfolio/IMG_8840.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_6880",
+      "src": "../assets/img/portfolio/IMG_8888.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_3137",
+      "src": "../assets/img/portfolio/IMG_9070.JPG",
+      "alt": "Opis",
+      "featured": false
+    },
+    {
+      "id": "p_2106",
+      "src": "../assets/img/portfolio/IMG_9139.JPG",
+      "alt": "Opis",
       "featured": false
     }
   ]
