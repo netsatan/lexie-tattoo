@@ -107,67 +107,7 @@ export function setupScrollReveal() {
   check();
 }
 
-function ensureButtonFilter() {
-  // Inject global SVG filter once (for button displacement/glow effect)
-  if (document.getElementById("btnFilterDefs")) return;
-
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("id", "btnFilterDefs");
-  svg.setAttribute("width", "0");
-  svg.setAttribute("height", "0");
-  svg.style.position = "absolute";
-  svg.style.left = "-9999px";
-  svg.style.top = "-9999px";
-  svg.setAttribute("aria-hidden", "true");
-
-  svg.innerHTML = `
-    <defs>
-      <filter id="btnFilter" color-interpolation-filters="sRGB">
-        <feImage x="0" y="0" width="100%" height="100%" result="map"
-          href="data:image/svg+xml,%3Csvg%20class%3D%22displacement-image%22%20viewBox%3D%220%200%20436%20156%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22red%22%20x1%3D%22100%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%220%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230000%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22red%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22blue%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230000%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22blue%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22436%22%20height%3D%22156%22%20fill%3D%22black%22%2F%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22436%22%20height%3D%22156%22%20rx%3D%2249%22%20fill%3D%22url(%23red)%22%2F%3E%0A%20%20%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22436%22%20height%3D%22156%22%20rx%3D%2249%22%20fill%3D%22url(%23blue)%22%20style%3D%22mix-blend-mode%3A%20difference%22%2F%3E%0A%20%20%3Crect%20x%3D%227.02%22%20y%3D%227.02%22%20width%3D%22421.96%22%20height%3D%22141.96%22%20rx%3D%2249%22%20fill%3D%22hsl(0%200%25%2049%25%20%2F%200.97)%22%20style%3D%22filter%3Ablur(10px)%22%2F%3E%0A%3C%2Fsvg%3E">
-        </feImage>
-
-        <feDisplacementMap in="SourceGraphic" in2="map" xChannelSelector="R" yChannelSelector="B" result="dispRed" scale="-180"></feDisplacementMap>
-        <feColorMatrix in="dispRed" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="red"></feColorMatrix>
-
-        <feDisplacementMap in="SourceGraphic" in2="map" xChannelSelector="R" yChannelSelector="B" result="dispGreen" scale="-170"></feDisplacementMap>
-        <feColorMatrix in="dispGreen" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="green"></feColorMatrix>
-
-        <feDisplacementMap in="SourceGraphic" in2="map" xChannelSelector="R" yChannelSelector="B" result="dispBlue" scale="-160"></feDisplacementMap>
-        <feColorMatrix in="dispBlue" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="blue"></feColorMatrix>
-
-        <feBlend in="red" in2="green" mode="screen" result="rg"></feBlend>
-        <feBlend in="rg" in2="blue" mode="screen" result="output"></feBlend>
-        <feGaussianBlur in="output" stdDeviation="1.8"></feGaussianBlur>
-      </filter>
-    </defs>
-  `;
-
-  document.body.appendChild(svg);
-}
-
-function initButtonFx() {
-  const sel = ".btn, a.btn, button.btn, .ig-card__btn";
-
-  document.addEventListener(
-    "pointermove",
-    (e) => {
-      const btn = e.target?.closest?.(sel);
-      if (!btn) return;
-
-      const r = btn.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width) * 100;
-      const y = ((e.clientY - r.top) / r.height) * 100;
-      btn.style.setProperty("--fx-x", x + "%");
-      btn.style.setProperty("--fx-y", y + "%");
-    },
-    { passive: true },
-  );
-}
-
 export function initSite() {
-  ensureButtonFilter();
-  initButtonFx();
   setupNavbar();
   setYear();
   preventWidows();
