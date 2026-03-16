@@ -662,44 +662,6 @@ a:hover {
     }
 }
 
-/* ====== Logo kerning ====== */
-
-.logo-kern span {
-    display: inline-block;
-}
-
-/* ---- Logotyp kearning ---- */
-
-.k-e {
-    margin-left: -0.02em;
-}
-
-.k-x {
-    margin-left: -0.019em;
-}
-
-.k-i {
-    margin-left: -0.05em;
-}
-
-.k-a {
-    margin-left: 0.02em;
-}
-
-.k-o {
-    margin-left: -0.009em;
-}
-
-.w2-k-e {
-    margin-left: -0.01em;
-}
-
-/* kontrola odstępu między słowami */
-.logo-kern .space {
-    display: inline-block;
-    width: 0.075em;
-}
-
 /* ====== Sections ====== */
 
 .section {
