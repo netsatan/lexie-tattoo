@@ -84,7 +84,7 @@ export function preventWidows(root = document) {
   );
   nodes.forEach((el) => {
     const txt = el.textContent || "";
-    // Replace the last regular space with a non‑breaking space.
+    // Replace the last regular space with a non-breaking space.
     el.textContent = txt.replace(/\s+(\S+)\s*$/, "\u00A0$1");
   });
 }
@@ -328,7 +328,7 @@ export async function setupContactForm() {
   form.setAttribute("action", GFORM_ACTION);
 
   const nameEl = qs("#name", form);
-  const emailEl = qs("#email", form);
+  const emailEl = qs("#fp_email", form);
   const msgEl = qs("#msg", form);
   const statusEl = qs(".form__status", form);
   const iframe = qs("#gformIframe");
