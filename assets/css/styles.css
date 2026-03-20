@@ -838,19 +838,19 @@ a:hover {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 150px;
+    width: 50px;
     pointer-events: none;
     z-index: 3;
 }
 
 .carousel::before {
     left: 0;
-    background: linear-gradient(90deg, var(--bg-3) 30%, transparent 100%);
+    background: linear-gradient(90deg, var(--bg-3) 0%, transparent 100%);
 }
 
 .carousel::after {
     right: 0;
-    background: linear-gradient(270deg, var(--bg-3) 30%, transparent 100%);
+    background: linear-gradient(270deg, var(--bg-3) 0%, transparent 100%);
 }
 
 .carousel__track {
@@ -974,8 +974,6 @@ a:hover {
 .carousel--featured {
     --slide-w: min(62vw, 500px);
     --gap: clamp(14px, 3vw, 24px);
-    position: relative;
-    overflow: clip;
 }
 
 .carousel--featured::before,
@@ -987,116 +985,56 @@ a:hover {
     align-items: center;
     padding-block: 32px 38px;
     scroll-snap-type: x proximity;
-    scroll-padding-inline: calc((100% - var(--slide-w)) / 2);
+    scroll-padding-inline: 50%;
 }
 
 .carousel--featured .slide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    filter: saturate(0.72);
-    transform: translateX(0) scale(0.72);
+    opacity: 0.38;
+    filter: saturate(0.78);
+    transform: translateX(0) scale(0.82);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
     z-index: 1;
 }
 
-.carousel--featured .slide.is-center,
-.carousel--featured .slide.is-prev,
-.carousel--featured .slide.is-next,
-.carousel--featured .slide.is-outer-prev,
-.carousel--featured .slide.is-outer-next {
-    visibility: visible;
-}
-
 .carousel--featured .slide.is-center {
     opacity: 1;
-    pointer-events: auto;
     filter: none;
     transform: translateX(0) scale(1);
     box-shadow: 0 22px 30px rgba(0, 0, 0, 0.28);
-    z-index: 5;
-}
-
-.carousel--featured .slide.is-prev,
-.carousel--featured .slide.is-next {
-    opacity: 0.82;
-    pointer-events: auto;
-    z-index: 3;
-    filter: blur(1.5px);
+    z-index: 4;
 }
 
 .carousel--featured .slide.is-prev {
-    transform: translateX(110px) scale(0.84);
+    opacity: 0.8;
+    transform: translateX(110px) scale(0.82);
+    z-index: 2;
+    filter: blur(2px);
 }
 
 .carousel--featured .slide.is-next {
-    transform: translateX(-110px) scale(0.84);
+    opacity: 0.8;
+    transform: translateX(-110px) scale(0.82);
+    z-index: 2;
+    filter: blur(2px);
 }
 
-.carousel--featured .slide.is-outer-prev,
-.carousel--featured .slide.is-outer-next,
 .carousel--featured .slide.is-far {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0.18;
+    transform: translateX(0) scale(0.72);
     z-index: 1;
-}
-
-.carousel--featured .slide.is-far {
-    visibility: hidden;
-    transform: translateX(0) scale(0.68);
-}
-
-@media (min-width: 1600px) {
-    .carousel--featured {
-        --slide-w: clamp(240px, 18.5vw, 330px);
-        --gap: clamp(16px, 1.2vw, 22px);
-    }
-
-    .carousel--featured .carousel__track {
-        scroll-padding-inline: calc((100% - var(--slide-w)) / 2);
-    }
-
-    .carousel--featured .slide.is-center {
-        transform: translateX(0) scale(1.08);
-    }
-
-    .carousel--featured .slide.is-prev {
-        transform: translateX(65px) scale(0.86);
-    }
-
-    .carousel--featured .slide.is-next {
-        transform: translateX(-65px) scale(0.86);
-    }
-
-    .carousel--featured .slide.is-outer-prev,
-    .carousel--featured .slide.is-outer-next {
-        opacity: 0.42;
-        visibility: visible;
-        transform: translateX(0) scale(0.72);
-        filter: blur(2.2px) saturate(0.7);
-        z-index: 2;
-    }
-
-    .carousel--featured .slide.is-outer-prev {
-        transform: translateX(180px) scale(0.72);
-    }
-
-    .carousel--featured .slide.is-outer-next {
-        transform: translateX(-180px) scale(0.72);
-    }
 }
 
 @media (max-width: 900px) {
     .carousel--featured {
-        --slide-w: min(70vw, 450px);
+        --slide-w: min(70vw, 290px);
     }
 
     .carousel--featured .slide.is-prev {
-        transform: translateX(108px) scale(0.84);
+        transform: translateX(150px) scale(0.84);
     }
 
     .carousel--featured .slide.is-next {
-        transform: translateX(-108px) scale(0.84);
+        transform: translateX(-150px) scale(0.84);
     }
 }
 
@@ -1129,15 +1067,15 @@ a:hover {
     }
 
     .carousel--featured .slide.is-prev {
-        transform: translateX(90px) scale(0.88);
+        transform: translateX(120px) scale(0.88);
     }
 
     .carousel--featured .slide.is-next {
-        transform: translateX(-90px) scale(0.88);
+        transform: translateX(-120px) scale(0.88);
     }
 
     .carousel--featured .slide.is-far {
-        opacity: 0;
+        opacity: 0.01;
         transform: scale(0.8);
     }
 }
