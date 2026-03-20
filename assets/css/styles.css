@@ -1005,14 +1005,14 @@ a:hover {
 }
 
 .carousel--featured .slide.is-prev {
-    opacity: 0.8;
+    opacity: 0.65;
     transform: translateX(110px) scale(0.82);
     z-index: 2;
     filter: blur(2px);
 }
 
 .carousel--featured .slide.is-next {
-    opacity: 0.8;
+    opacity: 0.65;
     transform: translateX(-110px) scale(0.82);
     z-index: 2;
     filter: blur(2px);
@@ -1031,10 +1031,14 @@ a:hover {
 
     .carousel--featured .slide.is-prev {
         transform: translateX(150px) scale(0.84);
+        opacity: 0.65;
+        filter: blur(2px);
     }
 
     .carousel--featured .slide.is-next {
         transform: translateX(-150px) scale(0.84);
+        opacity: 0.65;
+        filter: blur(2px);
     }
 }
 
@@ -1068,10 +1072,14 @@ a:hover {
 
     .carousel--featured .slide.is-prev {
         transform: translateX(120px) scale(0.88);
+        opacity: 0.56;
+        filter: blur(2px);
     }
 
     .carousel--featured .slide.is-next {
         transform: translateX(-120px) scale(0.88);
+        opacity: 0.56;
+        filter: blur(2px);
     }
 
     .carousel--featured .slide.is-far {
@@ -1529,7 +1537,7 @@ uc-copyright * {
 /* ====== Map ====== */
 
 .split--where_to_find_me {
-    grid-template-columns: 0.8fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 @media (max-width: 900px) {
@@ -1827,7 +1835,6 @@ html.home main > section {
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.2px;
-    color: var(--muted);
 }
 
 .review-card__year {
@@ -1846,7 +1853,7 @@ html.home main > section {
     align-items: center;
     justify-content: flex-end;
     gap: 4px;
-    opacity: 0.9;
+    opacity: 0.92;
     flex: 0 0 auto;
 }
 
@@ -1865,7 +1872,7 @@ html.home main > section {
 
 .review-card__text {
     margin: 0;
-    color: var(--muted);
+    color: var(--text);
     font-size: 14px;
     line-height: 1.75;
     display: -webkit-box;
