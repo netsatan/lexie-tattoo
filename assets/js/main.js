@@ -74,18 +74,26 @@ function setupCarousel(root) {
   ).matches;
 
   // ========== Center-snap helpers ==========
-  const getSlideCenterInTrack = (el) => el.offsetLeft + el.offsetWidth / 2;
+  const getTrackCenterX = () => {
+    const rT = track.getBoundingClientRect();
+    return rT.left + rT.width / 2;
+  };
+
+  const getSlideCenterX = (el) => {
+    const r = el.getBoundingClientRect();
+    return r.left + r.width / 2;
+  };
 
   const getCenteredIndex = () => {
     const slides = slidesAll();
     if (!slides.length) return 0;
 
-    const viewportCenter = track.scrollLeft + track.clientWidth / 2;
+    const cx = getTrackCenterX();
     let best = 0;
     let bestDist = Infinity;
 
     slides.forEach((el, i) => {
-      const d = Math.abs(getSlideCenterInTrack(el) - viewportCenter);
+      const d = Math.abs(getSlideCenterX(el) - cx);
       if (d < bestDist) {
         bestDist = d;
         best = i;
@@ -95,38 +103,11 @@ function setupCarousel(root) {
     return best;
   };
 
-  const updateSlideStates = () => {
-    const slides = slidesAll();
-    if (!slides.length) return;
-
-    const centered = getCenteredIndex();
-    slides.forEach((el, i) => {
-      el.classList.remove("is-center", "is-prev", "is-next", "is-far");
-
-      const delta = i - centered;
-      if (delta === 0) {
-        el.classList.add("is-center");
-      } else if (delta === -1) {
-        el.classList.add("is-prev");
-      } else if (delta === 1) {
-        el.classList.add("is-next");
-      } else {
-        el.classList.add("is-far");
-      }
-    });
-  };
-
   let programmaticUntil = 0;
   const markProgrammatic = (ms = 250) => {
     programmaticUntil = performance.now() + ms;
   };
   const isProgrammatic = () => performance.now() < programmaticUntil;
-
-  const getTargetScrollLeft = (el) => {
-    const raw = el.offsetLeft - (track.clientWidth - el.offsetWidth) / 2;
-    const max = Math.max(0, track.scrollWidth - track.clientWidth);
-    return Math.max(0, Math.min(max, raw));
-  };
 
   const centerToIndex = (idx, behavior = "smooth") => {
     const slides = slidesAll();
@@ -135,11 +116,9 @@ function setupCarousel(root) {
     idx = Math.max(0, Math.min(slides.length - 1, idx));
     const el = slides[idx];
 
-    markProgrammatic(350);
-    track.scrollTo({
-      left: getTargetScrollLeft(el),
-      behavior,
-    });
+    const delta = getSlideCenterX(el) - getTrackCenterX();
+    markProgrammatic(300);
+    track.scrollBy({ left: delta, behavior });
   };
 
   const next = () => {
@@ -202,19 +181,11 @@ function setupCarousel(root) {
     root.append(btnPrev, btnNext);
   }
 
-  let normalizeLoop = () => {};
-  let scrollEndT = null;
-  let loopState = null;
-
   const initLoop = () => {
     if (track.dataset.loopInit === "1") return;
 
     const slides = slidesAll();
     if (slides.length < 2) return;
-
-    slides.forEach((el, index) => {
-      el.dataset.originalIndex = String(index);
-    });
 
     const originalsCount = slides.length;
     const cloneCount = Math.min(3, originalsCount);
@@ -233,52 +204,49 @@ function setupCarousel(root) {
     headClones.forEach((c) => track.append(c));
 
     track.dataset.loopInit = "1";
-    loopState = { originalsCount, cloneCount, lock: false };
 
     requestAnimationFrame(() => {
-      const initialSlides = slidesAll();
-      const initialIdx = Math.min(initialSlides.length - 1, cloneCount + 1);
-      const initial = initialSlides[initialIdx] || initialSlides[cloneCount] || initialSlides[0];
-      if (!initial) return;
-      track.scrollLeft = getTargetScrollLeft(initial);
-      updateSlideStates();
-      scheduleArmCenteredCta();
+      const step = getStep();
+      track.scrollLeft = cloneCount * step;
+      requestAnimationFrame(() => centerToIndex(getCenteredIndex(), "auto"));
     });
 
-    normalizeLoop = () => {
-      if (!loopState || loopState.lock) return;
+    let lock = false;
+    let scrollEndT = null;
+
+    const normalizeLoop = () => {
+      if (lock) return;
 
       if (isProgrammatic()) {
-        if (scrollEndT) clearTimeout(scrollEndT);
         scrollEndT = setTimeout(normalizeLoop, 120);
         return;
       }
 
-      const slidesNow = slidesAll();
-      if (!slidesNow.length) return;
+      const step = getStep();
+      const start = cloneCount * step;
+      const end = start + originalsCount * step;
 
-      const centeredIdx = getCenteredIndex();
-      const centeredSlide = slidesNow[centeredIdx];
-      if (!centeredSlide) return;
-
-      const originalIdx = Number(centeredSlide.dataset.originalIndex);
-      if (Number.isNaN(originalIdx)) return;
-
-      const targetIdx = loopState.cloneCount + originalIdx;
-      if (centeredIdx === targetIdx) return;
-
-      const targetSlide = slidesNow[targetIdx];
-      if (!targetSlide) return;
-
-      loopState.lock = true;
-      markProgrammatic(220);
-      track.scrollLeft = getTargetScrollLeft(targetSlide);
-      requestAnimationFrame(() => {
-        updateSlideStates();
-        scheduleArmCenteredCta();
-        loopState.lock = false;
-      });
+      if (track.scrollLeft < start - step * 0.25) {
+        lock = true;
+        markProgrammatic(350);
+        track.scrollLeft = track.scrollLeft + originalsCount * step;
+        requestAnimationFrame(() => (lock = false));
+      } else if (track.scrollLeft > end + step * 0.25) {
+        lock = true;
+        markProgrammatic(350);
+        track.scrollLeft = track.scrollLeft - originalsCount * step;
+        requestAnimationFrame(() => (lock = false));
+      }
     };
+
+    track.addEventListener(
+      "scroll",
+      () => {
+        if (scrollEndT) clearTimeout(scrollEndT);
+        scrollEndT = setTimeout(normalizeLoop, 140);
+      },
+      { passive: true },
+    );
   };
 
   const autoplayMs = Number(root.getAttribute("data-autoplay") || "5000");
@@ -348,37 +316,12 @@ function setupCarousel(root) {
     armDebounceT = window.setTimeout(armCenteredCta, 160);
   };
 
-  const onScroll = () => {
-    updateSlideStates();
-    scheduleArmCenteredCta();
-
-    if (scrollEndT) clearTimeout(scrollEndT);
-    scrollEndT = setTimeout(() => {
-      normalizeLoop();
-
-      if (!isProgrammatic()) {
-        const behavior = prefersReduced ? "auto" : "smooth";
-        centerToIndex(getCenteredIndex(), behavior);
-      }
-    }, 120);
-  };
-
-  track.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", () => {
-    updateSlideStates();
-    const behavior = prefersReduced ? "auto" : "smooth";
-    centerToIndex(getCenteredIndex(), behavior);
-  }, { passive: true });
+  track.addEventListener("scroll", scheduleArmCenteredCta, { passive: true });
 
   initLoop();
-  window.setTimeout(() => {
-    updateSlideStates();
-    centerToIndex(getCenteredIndex(), "auto");
-  }, 80);
   start();
   window.setTimeout(armCenteredCta, 900);
 }
-
 
 /* ============================================================
    Featured carousel render + "Wolny wzór!" badge + CTA button

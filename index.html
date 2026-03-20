@@ -78,7 +78,7 @@
                 <div class="container">
                     <h1 class="sr-only">Lexie Salome</h1>
                     <div
-                        class="hero__title"
+                        class="hero__title reveal"
                         role="img"
                         aria-label="Lexie Salome"
                     >
@@ -88,109 +88,66 @@
                         tattoo ✧ fine line ✧ blackwork
                     </div>
                     <div class="hero__grid">
-                        <div class="reveal">
-                            <p class="hero__about">
-                                Cześć, jestem Lexie!<br />
-                                Jestem tatuażystką z 9-letnim stażem, na co
-                                dzień pracuję w Warszawie. Specjalizuję się w
-                                tatuażach w stylu fine line, blackwork oraz soft
-                                shading. Najlepiej odnajduję się w delikatnych
-                                projektach opartych na cienkiej linii,
-                                precyzyjnych detalach i subtelnym cieniowaniu w
-                                stylu black & grey.<br />
-                                W moich pracach dominują motywy inspirowane
-                                kobiecością, secesją i naturą. Bardzo często
-                                tworzę projekty przedstawiające kobiety –
-                                wiedźmy, boginie, syreny, wojowniczki i postacie
-                                inspirowane mitologią oraz fantastyką. Ważnym
-                                elementem mojego stylu są również kwiaty,
-                                roślinne ornamenty i dekoracyjne kompozycje,
-                                które chętnie łączę z architekturą oraz estetyką
-                                art nouveau. Dużą inspiracją jest dla mnie
-                                twórczość Alfonsa Muchy.<br />
-                                Tworzę zarówno autorskie projekty, jak i tatuaże
-                                dopasowane do indywidualnych pomysłów klientów.
-                                Zależy mi na tym, aby każdy tatuaż był nie tylko
-                                unikalny i estetyczny, ale też harmonijnie
-                                układał się na ciele i był wykonany z dbałością
-                                o szczegóły.<br />
-                                Prywatnie uwielbiam podróżować i odkrywać nowe
-                                miejsca. Jestem też fanką fantastyki i horrorów
-                                – szczególnie książek Sapkowskiego oraz świata
-                                „Władcy Pierścieni”. Poza tatuażem lubię
-                                aktywność fizyczną, bieganie, gry, zbieranie
-                                ptasich piórek i głaskanie kotów ;]
-                            </p>
-                            <div class="hero__actions reveal">
-                                <a class="btn btn--ghost" href="./portfolio/"
-                                    >Pełne portfolio</a
-                                >
-                                <a
-                                    class="btn btn--ghost"
-                                    href="./#where_to_find_me"
-                                    >PRISM – tu pracuję</a
-                                >
-                            </div>
-                        </div>
-                        <div aria-hidden="true" class="hero__side reveal">
-                            <div class="hero__imageWrap">
-                                <img
-                                    alt=""
-                                    class="hero__image"
-                                    src="./assets/img/lexie_fg.png"
-                                />
-                            </div>
+                        <div class="hero__actions">
+                            <a class="btn btn--ghost" href="./#where_to_find_me"
+                                >PRISM – tu pracuję</a
+                            >
                         </div>
                     </div>
                 </div>
             </section>
             <section class="section" id="works">
-                <div>
-                    <h2 class="sr-only">Wyselekcjonowane prace</h2>
-                    <div
-                        class="carousel carousel--featured"
-                        data-autoplay="5000"
-                        data-carousel=""
-                    >
-                        <div
-                            aria-label="Wyselekcjonowane prace (karuzela)"
-                            class="carousel__track"
-                            data-track=""
-                            id="featuredTrack"
-                        ></div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section section--reviews" id="reviews">
                 <div class="container">
-                    <div class="reviews__header reveal">
-                        <h2 class="section__title reviews__title">
-                            Opinie klientek i klientów
-                        </h2>
-                        <p class="reviews__lead">
-                            Kilka słów od osób, które już odwiedziły mnie w
-                            studio.
+                    <h2 class="section__title reviews__title">Wybrane prace</h2>
+                    <div
+                        class="reviews__lead"
+                        "
+                    <p>
+                            Prace, które najlepiej pokazują, jak wygląda moja
+                            codzienna twórczość.
                         </p>
                     </div>
                 </div>
                 <div
-                    class="carousel carousel--reviews reveal"
-                    data-autoplay="6500"
+                    class="carousel reveal"
+                    data-autoplay="5000"
                     data-carousel=""
                 >
                     <div
-                        aria-label="Opinie klientów (karuzela)"
-                        class="carousel__track carousel__track--reviews"
+                        aria-label="Wyselekcjonowane prace (karuzela)"
+                        class="carousel__track"
                         data-track=""
-                        id="reviewsTrack"
+                        id="featuredTrack"
                     ></div>
                 </div>
+
+
+                <div class="container" style="display: flex; gap: clamp(20px, 5vw, 50px);justify-content: center;">
+                    <a
+                    style="width: 150px;"
+                    class="btn btn--ghost"
+                    href="./portfolio/"
+                    >Pełne portfolio</a>
+                    <a
+                    style="width: 150px;"
+                    class="btn btn--ghost"
+                    href="./available_designs/"
+                    >Wolne wzory</a>
+                </div>
             </section>
+
             <section class="section section--contact" id="contact">
                 <div class="container">
-                    <h2 class="section__title">Napisz do mnie</h2>
-                    <div class="split split--contact">
+                    <h2 class="section__title reviews__title">
+                        Napisz do mnie
+                    </h2>
+                    <p class="reviews__lead">
+                        Tu zaczyna się Twój projekt - napisz do mnie i opowiedz
+                        o swoim pomyśle.
+                    </p>
+
+                    <br />
+                    <div class="split split--contact reveal">
                         <div class="card contact__formCard">
                             <form
                                 class="form"
@@ -333,10 +290,35 @@
                     </div>
                 </div>
             </section>
+            <section class="section section--reviews" id="reviews">
+                <div class="container">
+                    <div class="reviews__header reveal">
+                        <h2 class="section__title reviews__title">
+                            Opinie klientek i klientów
+                        </h2>
+                        <p class="reviews__lead">
+                            Kilka słów od osób, które już odwiedziły mnie w
+                            studio.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="carousel carousel--reviews reveal"
+                    data-autoplay="6500"
+                    data-carousel=""
+                >
+                    <div
+                        aria-label="Opinie klientów (karuzela)"
+                        class="carousel__track carousel__track--reviews"
+                        data-track=""
+                        id="reviewsTrack"
+                    ></div>
+                </div>
+            </section>
             <section class="section" id="where_to_find_me">
                 <div class="container">
                     <h2 class="section__title">Gdzie mnie znajdziesz?</h2>
-                    <div class="split split--where_to_find_me">
+                    <div class="split split--where_to_find_me reveal">
                         <div class="card card--map">
                             <a
                                 class="mapLink"
@@ -349,9 +331,14 @@
                             </a>
                         </div>
                         <div class="card">
-                            <p style="font-weight: bold">
-                                PRISM – Tattoo Studio
-                            </p>
+                            <center>
+                                <span
+                                    style="font-weight: bold; font-size: 20px"
+                                >
+                                    PRISM – Tattoo Studio
+                                </span>
+                            </center>
+                            <br />
 
                             <ul class="list">
                                 <li>Adres: Puławska 41/26, 02-508 Warszawa</li>
@@ -359,7 +346,7 @@
                             </ul>
                             <br />
 
-                            <p>
+                            <p style="text-align: justify">
                                 PRISM Tattoo to wyjątkowe studio, w którym
                                 design spotyka się ze sztuką tatuażu. Znajduje
                                 się w sercu zielonego Starego Mokotowa, w
@@ -368,18 +355,7 @@
                                 łączeniu klasycznych inspiracji ze współczesnymi
                                 formami sztuki.
                             </p>
-                            <p>
-                                Pracuję w PRISM od 5 lat i najbardziej cenię
-                                sobie atmosferę, którą tworzy ten zespół – pełną
-                                swobody, kreatywności i wzajemnego wsparcia.
-                                Surowe betonowe ściany, białe meble, rośliny i
-                                kryształy sprawiają, że studio ma niepowtarzalny
-                                klimat i inspiruje już od pierwszego wejścia.
-                                Każdy artysta ma tu własny, unikalny styl,
-                                dzięki czemu PRISM jest idealnym miejscem
-                                zarówno na pierwszy tatuaż, jak i kolejny.
-                            </p>
-                            <p>
+                            <p style="text-align: justify">
                                 Studio jest świetnie skomunikowane. W
                                 najbliższej okolicy znajdują się dwa przystanki:
                             </p>

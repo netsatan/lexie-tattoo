@@ -3,12 +3,12 @@
    ========================================================== */
 
 :root {
-    --bg: #171717;
+    --bg: #3d362e;
     --bg-2: #101114;
-    --bg-3: #1d1c1c;
-    --text: #fbf8f4;
-    --muted: rgba(244, 244, 245, 0.72);
-    --border: rgba(244, 244, 245, 0.12);
+    --bg-3: #413a33;
+    --text: #f5f2ec;
+    --muted: rgba(218, 210, 198, 0.9);
+    --border: rgba(218, 210, 198, 0.15);
     --accent: #fbf8f4;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
     --radius: 18px;
@@ -17,21 +17,21 @@
     --container: 1250px;
     --gap: 18px;
     --gap-lg: 42px;
-    --focus: 0 0 0 3px rgba(244, 244, 245, 0.25);
+    --focus: rgba(218, 210, 198, 0.25);
     --modal-speed: 0.45s;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --bg: #fbf8f4;
+        --bg: #ece2d5;
         --bg-2: #f5f6f8;
-        --bg-3: #f6f2ef;
-        --text: #171717;
-        --muted: rgba(11, 11, 12, 0.68);
-        --border: rgba(11, 11, 12, 0.12);
-        --accent: #171717;
+        --bg-3: #e7e0d6;
+        --text: #342a23;
+        --muted: rgba(52, 42, 35, 0.65);
+        --border: rgba(52, 42, 35, 0.15);
+        --accent: #2e2119;
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-        --focus: 0 0 0 3px rgba(11, 11, 12, 0.15);
+        --focus: rgba(52, 42, 35, 0.55);
     }
 }
 
@@ -92,7 +92,7 @@ body::before {
 
 @media (prefers-color-scheme: light) {
     body::before {
-        opacity: 0.45;
+        opacity: 0.5;
         mix-blend-mode: overlay;
     }
 }
@@ -107,7 +107,7 @@ body > footer {
 @media (min-width: 600px) {
     body:not(.no-justify) p,
     body:not(.no-justify) li {
-        text-wrap: pretty;
+        text-wrap: wrap;
     }
 }
 
@@ -441,19 +441,6 @@ a:hover {
     padding: 10px 0 36px;
     padding-bottom: 0;
     overflow: hidden;
-
-    /* Image + background tuning */
-    --lexie-w: 100%;
-
-    /* Prism background (behind lexie_fg)
-       Use a dedicated "soft circle" mask that is fully transparent at the edges,
-       so it never shows hard cuts/lines on any breakpoint. */
-    --prism-size: clamp(650px, 78vw, 850px);
-    --prism-left: 48%;
-    --prism-top: 45%;
-    --prism-alpha: 1;
-    --prism-img-x: 100%;
-    --prism-img-y: -30px;
 }
 
 .hero .container {
@@ -665,7 +652,6 @@ a:hover {
 
 .section {
     padding: 5vh 0;
-    border-top: 1px solid var(--border);
 }
 
 .section__title {
@@ -802,10 +788,10 @@ a:hover {
 
 .carousel {
     position: relative;
-
     /* sterowanie szerokością slajdu */
-    --slide-w: clamp(220px, 62vw, 520px);
-    --gap: 12px;
+    --slide-w: clamp(220px, 62vw, 550px);
+    --gap: 0px;
+    margin: 25px 20px;
 }
 
 .carousel__nav {
@@ -813,7 +799,7 @@ a:hover {
     top: 0;
     bottom: 0;
     width: 56px;
-    z-index: 5;
+    z-index: 3;
     background: transparent;
     border: 0;
     padding: 0;
@@ -832,37 +818,55 @@ a:hover {
     box-shadow: var(--focus);
 }
 
+@media (max-width: 600px) {
+    .carousel {
+        --slide-w: 90vw; /* trochę większe slajdy */
+        --gap: 0px; /* mniejsza przerwa */
+
+        margin: 25px 0px;
+    }
+
+    .carousel__nav {
+        display: none;
+    }
+
+    /* żeby “peek” boków był widoczny (jeśli masz fade overlay) */
+    .carousel::before,
+    .carousel::after {
+        display: none;
+    }
+}
+
 .carousel::before,
 .carousel::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 50px;
+    width: 80px;
     pointer-events: none;
-    z-index: 3;
+    z-index: 2;
 }
 
 .carousel::before {
     left: 0;
-    background: linear-gradient(90deg, var(--bg-3) 0%, transparent 100%);
+    background: linear-gradient(90deg, var(--bg-3) 5%, transparent 100%);
 }
 
 .carousel::after {
     right: 0;
-    background: linear-gradient(270deg, var(--bg-3) 0%, transparent 100%);
+    background: linear-gradient(270deg, var(--bg-3) 5%, transparent 100%);
 }
 
 .carousel__track {
     display: flex;
     gap: var(--gap);
     overflow-x: auto;
-    overflow-y: visible;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 
     /* klucz: padding, który pozwala centrować pierwszy i ostatni slajd */
-    padding-block: 22px 26px;
+    padding-block: 10px 16px;
     padding-inline: calc((100% - var(--slide-w)) / 2);
     scroll-padding-inline: calc((100% - var(--slide-w)) / 2);
 
@@ -877,19 +881,12 @@ a:hover {
     flex: 0 0 var(--slide-w);
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    border-radius: calc(var(--radius) + 4px);
+    border-radius: var(--radius);
     overflow: hidden;
     background: var(--bg-2);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.24);
     position: relative;
     aspect-ratio: 4/5;
-    transform-origin: center center;
-    transition:
-        transform 0.4s ease,
-        opacity 0.4s ease,
-        filter 0.4s ease,
-        box-shadow 0.4s ease;
-    will-change: transform, opacity;
 }
 
 .slide img {
@@ -902,7 +899,7 @@ a:hover {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 6;
+    z-index: 3;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -917,6 +914,7 @@ a:hover {
     pointer-events: none;
 }
 
+/* CTA button on free patterns */
 .slide__ctaWrap {
     position: absolute;
     inset: 0;
@@ -924,7 +922,7 @@ a:hover {
     align-items: flex-end;
     justify-content: center;
     padding: 14px;
-    z-index: 7;
+    z-index: 4;
     pointer-events: none; /* allow scroll/drag; button will re-enable */
 }
 
@@ -968,115 +966,6 @@ a:hover {
     .slide[data-free-pattern="1"]:hover .slide__ctaBtn {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-.carousel--featured {
-    --slide-w: min(62vw, 500px);
-    --gap: clamp(14px, 3vw, 24px);
-}
-
-.carousel--featured::before,
-.carousel--featured::after {
-    display: none;
-}
-
-.carousel--featured .carousel__track {
-    align-items: center;
-    padding-block: 32px 38px;
-    scroll-snap-type: x proximity;
-    scroll-padding-inline: 50%;
-}
-
-.carousel--featured .slide {
-    opacity: 0.38;
-    filter: saturate(0.78);
-    transform: translateX(0) scale(0.82);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-    z-index: 1;
-}
-
-.carousel--featured .slide.is-center {
-    opacity: 1;
-    filter: none;
-    transform: translateX(0) scale(1);
-    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.28);
-    z-index: 4;
-}
-
-.carousel--featured .slide.is-prev {
-    opacity: 0.48;
-    transform: translateX(110px) scale(0.82);
-    z-index: 2;
-}
-
-.carousel--featured .slide.is-next {
-    opacity: 0.48;
-    transform: translateX(-110px) scale(0.82);
-    z-index: 2;
-}
-
-.carousel--featured .slide.is-far {
-    opacity: 0.18;
-    transform: translateX(0) scale(0.72);
-    z-index: 1;
-}
-
-@media (max-width: 900px) {
-    .carousel--featured {
-        --slide-w: min(70vw, 290px);
-    }
-
-    .carousel--featured .slide.is-prev {
-        transform: translateX(28px) scale(0.84);
-    }
-
-    .carousel--featured .slide.is-next {
-        transform: translateX(-28px) scale(0.84);
-    }
-}
-
-@media (max-width: 600px) {
-    .carousel {
-        --slide-w: 90vw;
-        --gap: 0px;
-    }
-
-    .carousel__nav {
-        display: none;
-    }
-
-    .carousel::before,
-    .carousel::after {
-        display: none;
-    }
-
-    .carousel__track {
-        padding-block: 14px 18px;
-    }
-
-    .carousel--featured {
-        --slide-w: min(80vw, 480px);
-        --gap: 10px;
-    }
-
-    .carousel--featured .carousel__track {
-        padding-block: 22px 24px;
-    }
-
-    .carousel--featured .slide.is-prev {
-        transform: translateX(12px) scale(0.88);
-        opacity: 0.56;
-    }
-
-    .carousel--featured .slide.is-next {
-        transform: translateX(-12px) scale(0.88);
-        opacity: 0.56;
-    }
-
-    .carousel--featured .slide.is-far {
-        opacity: 0.01;
-        transform: scale(0.8);
     }
 }
 
@@ -1356,19 +1245,25 @@ a:hover {
 uc-copyright,
 uc-copyright * {
     pointer-events: none !important;
-    opacity: 0.4 !important;
+    opacity: 0 !important;
     user-select: none !important;
+}
+
+uc-file-uploader-minimal {
+    --uc-border-radius: 14px;
+    --uc-background: var(--muted);
+    --uc-foreground: var(--border);
+    --uc-accent: var(--border);
+    --uc-accent-foreground: var(--border);
+    --uc-muted: rgba(0, 0, 0, 0.55);
 }
 
 @media (prefers-color-scheme: light) {
     uc-file-uploader-minimal {
         --uc-background: rgba(255, 255, 255, 0.7);
         --uc-foreground: #171717;
-        --uc-border-radius: 14px;
-
         --uc-accent: #171717;
         --uc-accent-foreground: #fef8f0;
-
         --uc-muted: rgba(0, 0, 0, 0.55);
     }
 }
@@ -1850,21 +1745,21 @@ html.home main > section {
 }
 
 .review-card__star {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     fill: transparent;
     stroke: color-mix(in srgb, var(--accent) 65%, var(--border));
     stroke-width: 1.2;
 }
 
 .review-card__star.is-filled {
-    fill: #e7c69f;
-    stroke: #c0ae99;
+    fill: #ba9f72;
+    stroke: #ba9f72;
 }
 
 .review-card__text {
     margin: 0;
-    color: var(--text);
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.75;
     display: -webkit-box;
