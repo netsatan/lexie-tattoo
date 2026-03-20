@@ -708,6 +708,7 @@ a:hover {
     padding: 18px;
     background: color-mix(in srgb, var(--bg) 76%, transparent);
     box-shadow: var(--shadow);
+    font-size: 14px;
 }
 
 .card p {
