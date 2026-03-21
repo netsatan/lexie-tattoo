@@ -885,7 +885,7 @@ a:hover {
     border-radius: var(--radius);
     overflow: hidden;
     background: var(--bg-2);
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.24);
     position: relative;
     aspect-ratio: 4/5;
 }
@@ -1638,7 +1638,7 @@ html.home main > section {
 }
 
 .container-reviews {
-    width: min(100%, var(--container) * 1.45);
+    width: min(100%, var(--container) * 1.25);
     margin-inline: auto;
 }
 
