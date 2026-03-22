@@ -437,7 +437,6 @@ a:hover {
 
 /* ====== Hero ====== */
 
-
 .hero {
     position: relative;
     isolation: isolate;
@@ -520,7 +519,6 @@ a:hover {
     margin-inline: auto;
 }
 
-
 .hero__image {
     position: relative;
     z-index: 1;
@@ -529,7 +527,7 @@ a:hover {
     height: auto;
     object-fit: contain;
     object-position: bottom center;
-    filter: contrast(.2) invert();
+    filter: contrast(0.15) invert() sepia(0.4);
 }
 
 @media (max-width: 1100px) {
@@ -585,7 +583,6 @@ a:hover {
     .hero__imageWrap {
         width: min(78vw, 420px);
     }
-    }
 
     .hero__logo {
         width: clamp(260px, 72vw, 520px);
@@ -601,6 +598,7 @@ a:hover {
         line-height: 1.75;
     }
 }
+
 /* ====== Sections ====== */
 
 .section {
