@@ -201,11 +201,6 @@ async function renderPortfolio() {
       const section = document.createElement("section");
       section.className = "portfolio-group";
 
-      const title = document.createElement("h2");
-      title.className = "portfolio-group__title";
-      const SUFFIX = " ✧˚₊";
-      title.textContent = (group.name || "") + SUFFIX;
-
       const grid = document.createElement("div");
       grid.className = "grid";
       grid.setAttribute("aria-label", `Portfolio — ${group.name || ""}`);
@@ -267,7 +262,7 @@ async function renderPortfolio() {
         grid.append(tile);
       }
 
-      section.append(title, grid);
+      section.append(grid);
       root.append(section);
     }
 

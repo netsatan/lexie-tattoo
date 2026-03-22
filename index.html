@@ -138,17 +138,84 @@
 
             <section class="section section--contact" id="contact">
                 <div class="container">
-                    <h2 class="section__title reviews__title">
+                    <h2 class="section__title reviews__title reveal">
                         Napisz do mnie
                     </h2>
-                    <p class="reviews__lead">
+                    <p class="reviews__lead reveal">
                         Tu zaczyna się Twój projekt - napisz do mnie i opowiedz
                         o swoim pomyśle.
                     </p>
                     <br />
                     <br />
-                    <div class="split split--contact reveal">
-                        <div class="card contact__formCard">
+                    <div class="split split--contact">
+                        <div class="contact__info">
+                            <div class="experience experience--contact">
+                                <div class="experience__line" aria-hidden="true"></div>
+
+                                <article class="experience__step reveal">
+                                    <div class="experience__dot" aria-hidden="true"></div>
+                                    <div class="experience__content">
+                                        <span class="experience__eyebrow">Krok 01</span>
+                                        <h3 class="experience__title">Wiadomość z pomysłem</h3>
+                                        <p>
+                                            Napisz do mnie i opowiedz o swoim wzorze.
+                                            Możesz dodać inspiracje, miejsce na ciele
+                                            i orientacyjny rozmiar.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="experience__step reveal">
+                                    <div class="experience__dot" aria-hidden="true"></div>
+                                    <div class="experience__content">
+                                        <span class="experience__eyebrow">Krok 02</span>
+                                        <h3 class="experience__title">Ustalenie szczegółów</h3>
+                                        <p>
+                                            Kontaktuję się z Tobą – na tym etapie rozmawiamy o projekcie, żeby mieć jednakowe wyobrażenie tego jak tatuaż powinien wyglądać.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="experience__step reveal">
+                                    <div class="experience__dot" aria-hidden="true"></div>
+                                    <div class="experience__content">
+                                        <span class="experience__eyebrow">Krok 03</span>
+                                        <h3 class="experience__title">Rezerwacja terminu</h3>
+                                        <p>
+                                            Po ustaleniu wszstkich detali, daję Ci propozycję terminów, wybierasz najkorzystniejszą opcję. Termin rezerwujesz poprzez wpłacanie zadatku blikiem lub przelewem.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="experience__step reveal">
+                                    <div class="experience__dot" aria-hidden="true"></div>
+                                    <div class="experience__content">
+                                        <span class="experience__eyebrow">Krok 04</span>
+                                        <h3 class="experience__title">Projekt i dopracowanie</h3>
+                                        <p>
+                                            Na podstawie ustaleń przygotowuję indywidualny
+                                            projekt, dbając o proporcje, lekkość linii
+                                            i spójność całości.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="experience__step reveal">
+                                    <div class="experience__dot" aria-hidden="true"></div>
+                                    <div class="experience__content">
+                                        <span class="experience__eyebrow">Krok 05</span>
+                                        <h3 class="experience__title">Sesja w studio</h3>
+                                        <p>
+                                            Spotykamy się w PRISM — w spokojnej atmosferze,
+                                            z naciskiem na komfort, precyzję i estetyczne
+                                            wykonanie wzoru.
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="card contact__formCard reveal">
                             <form
                                 class="form"
                                 id="contactForm"
@@ -181,9 +248,9 @@
                                 <div class="field">
                                     <label for="msg">Wiadomość</label>
                                     <textarea id="msg" name="entry.839337160">
-✧ Pomysł na wzór: 
-✧ Miejsce na ciele: 
-✧ Rozmiar (cm): </textarea
+✧ Pomysł na wzór:
+✧ Miejsce na ciele:
+✧ Rozmiar (cm):</textarea
                                     >
                                 </div>
                                 <div class="field">
@@ -206,8 +273,8 @@
                                         id="lexieUploader"
                                     ></uc-file-uploader-minimal>
                                     <small class="form__hint">
-                                        Załącz zdjęcia (jpg / jpeg / png / webp
-                                        / heic) • max 3 MB / plik • do 7 plików
+                                        Załącz zdjęcia (jpg / jpeg / png / webp / heic)
+                                        • max 3 MB / plik • do 7 plików
                                     </small>
                                 </div>
                                 <button class="btn btn--primary" type="submit">
@@ -226,7 +293,8 @@
                                 title="Google Forms submit"
                             ></iframe>
                         </div>
-                        <div class="card ig-card">
+
+                        <div class="card ig-card reveal">
                             <a
                                 class="ig-profile__link"
                                 href="https://instagram.com/lexietattoo"
@@ -290,6 +358,7 @@
                     </div>
                 </div>
             </section>
+
             <section class="section section--reviews" id="reviews">
                 <div class="container">
                     <div class="reviews__header reveal">
@@ -357,6 +426,7 @@
                                 <li>Czynne: Wtorek - Sobota (11:00-18:00)</li>
                                 <li>Telefon: <a href="tel:+48790340440">+48 790 340 440</a></li>
                             </ul>
+
                             <p style="text-align: justify; margin-bottom: 20px;">
                                 Studio jest świetnie skomunikowane. W
                                 najbliższej okolicy znajdują się dwa przystanki:
@@ -379,5 +449,6 @@
             </div>
         </footer>
         <script src="./assets/js/main.js" type="module"></script>
+
     </body>
 </html>

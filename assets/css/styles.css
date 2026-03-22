@@ -1379,13 +1379,12 @@ uc-file-uploader-minimal {
 
 /* Kontakt: grid ma się rozciągać na wysokość najwyższej kolumny */
 .split--contact {
-    grid-template-columns: 1fr 0.7fr;
+    grid-template-columns: 0.9fr 1.15fr 0.75fr;
+    align-items: start;
 }
 
-/* Prawa kolumna: obraz przyklejony do dołu */
-
-/* Mobile: standardowo układ jeden pod drugim */
-@media (max-width: 900px) {
+/* Mobile */
+@media (max-width: 1000px) {
     .split--contact {
         grid-template-columns: 1fr;
     }
@@ -1407,8 +1406,8 @@ uc-file-uploader-minimal {
 }
 
 .ig-card {
-    width: 100%;
     height: 400px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1422,10 +1421,8 @@ uc-file-uploader-minimal {
     margin-top: 14px;
 }
 
-/* ====== Map ====== */
-
 .split--where_to_find_me {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.7fr 1fr;
 }
 
 @media (max-width: 900px) {
@@ -1438,6 +1435,13 @@ uc-file-uploader-minimal {
     padding: 0;
     overflow: hidden;
     position: relative;
+}
+
+.grid--where_to_find_me {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    padding-bottom: 34px;
 }
 
 .card--map img {
@@ -1724,8 +1728,8 @@ html.home main > section {
 }
 
 .review-card__star.is-filled {
-    fill: #ba9f72;
-    stroke: #ba9f72;
+    fill: #f6c470;
+    stroke: #f6c470;
 }
 
 .review-card__text {
@@ -1766,5 +1770,89 @@ html.home main > section {
         line-height: 1.7;
         -webkit-line-clamp: 9;
         line-clamp: 9;
+    }
+}
+/* ====== Experience / Process ====== */
+
+.contact__info {
+    padding-top: 4px;
+}
+
+.experience--contact {
+    position: relative;
+    display: grid;
+    gap: 28px;
+    padding: 8px 0 4px;
+}
+
+.experience--contact .experience__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 18px;
+    width: 1px;
+    background: var(--border);
+    opacity: 0.7;
+}
+
+.experience--contact .experience__step {
+    position: relative;
+    padding-left: 46px;
+}
+
+.experience--contact .experience__dot {
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: translateX(-50%);
+}
+
+.experience--contact .experience__content {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.experience--contact .experience__eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+}
+
+.experience--contact .experience__title {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.experience--contact .experience__content p {
+    margin: 0;
+    width: 100%;
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 15px;
+}
+
+.ig-card {
+    min-height: 400px;
+}
+
+/* tablet/mobile */
+@media (max-width: 1000px) {
+    .experience--contact .experience__content p {
+        max-width: 42ch;
+    }
+
+    .ig-card {
+        min-height: 0;
     }
 }
