@@ -612,7 +612,7 @@ a:hover {
 
     .hero__kicker {
         font-size: 16px;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.1em;
     }
 
     .hero__about {
@@ -1759,7 +1759,8 @@ html.home main > section {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 18px;
+    right: 18px;
+    left: auto;
     width: 1px;
     background: var(--border);
     opacity: 0.7;
@@ -1767,18 +1768,20 @@ html.home main > section {
 
 .experience--contact .experience__step {
     position: relative;
-    padding-left: 46px;
+    padding-left: 0;
+    padding-right: 46px;
 }
 
 .experience--contact .experience__dot {
     position: absolute;
-    left: 18px;
+    right: 18px;
+    left: auto;
     top: 10px;
     width: 8px;
     height: 8px;
     border-radius: 999px;
     background: var(--accent);
-    transform: translateX(-50%);
+    transform: translateX(50%);
 }
 
 .experience--contact .experience__content {
@@ -1786,6 +1789,7 @@ html.home main > section {
     background: transparent;
     border: 0;
     box-shadow: none;
+    text-align: right;
 }
 
 .experience--contact .experience__eyebrow {
@@ -1805,7 +1809,7 @@ html.home main > section {
 }
 
 .experience--contact .experience__content p {
-    margin: 0;
+    margin: 0 0 0 auto;
     width: 100%;
     color: var(--muted);
     line-height: 1.75;
