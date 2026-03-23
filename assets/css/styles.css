@@ -70,6 +70,7 @@ body {
     letter-spacing: 0.2px;
     position: relative;
     isolation: isolate;
+    overflow-x: clip;
 }
 
 /* ====== Background texture (grain via SVG feTurbulence) ====== */
@@ -458,14 +459,16 @@ a:hover {
 }
 
 .hero__logo {
-    width: clamp(320px, 45vw, 760px);
-    aspect-ratio: 1200 / 380;
+    width: 100%;
+    aspect-ratio: 4 / 1;
     background-color: color-mix(in srgb, var(--text) 80%, var(--muted));
     display: block;
     margin-inline: auto;
-
-    -webkit-mask: url("../img/logotyp.svg") center / contain no-repeat;
-    mask: url("../img/logotyp.svg") center / contain no-repeat;
+    -webkit-mask-source-type: auto;
+    -webkit-mask: url("../img/logotyp.svg") center center / contain no-repeat;
+    mask: url("../img/logotyp.svg") center center / contain no-repeat;
+    margin-bottom: -10px;
+    scale: 1.2;
 }
 
 .hero__grid {
@@ -486,9 +489,8 @@ a:hover {
 }
 
 .hero__kicker {
-    margin: 18px 0;
+    margin: 18px 0px 3vh;
     color: color-mix(in srgb, var(--muted) 90%, transparent);
-    font-size: 16px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
 }
@@ -498,7 +500,6 @@ a:hover {
     color: var(--muted);
     font-size: 14px;
     line-height: 1.85;
-    text-align: center;
 }
 
 .hero__actions {
@@ -515,14 +516,16 @@ a:hover {
     justify-content: center;
     align-items: end;
     min-height: 640px;
-    overflow: visible;
+    overflow-y: visible;
 }
 
 .hero__imageWrap {
     position: relative;
     width: min(100%, 720px);
     margin-inline: auto;
-    margin-bottom: -300px;
+    margin-bottom: -320px;
+    margin-top: 10vh;
+    scale: 1.25;
 }
 
 .hero__image {
@@ -572,52 +575,57 @@ a:hover {
         padding: 12px 0 18px;
     }
 
-    .hero__title {
-        margin-bottom: 10px;
-    }
-
     .hero__grid {
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "logo"
+            "kicker"
+            "image"
+            "about"
+            "actions";
         gap: 18px;
         margin-top: -20px;
     }
 
     .hero__content {
-        order: 2;
-        max-width: 100%;
-        padding-bottom: 0;
-        align-items: center;
-    }
-
-    .hero__about {
-        max-width: 50ch;
-    }
-
-    .hero__actions {
-        justify-content: center;
-    }
-
-    .hero__side {
-        order: 1;
-        min-height: 0;
-    }
-
-    .hero__imageWrap {
-        width: min(50vw, 420px);
+        display: contents;
     }
 
     .hero__logo {
+        margin-top: 5vh;
+        grid-area: logo;
         width: clamp(260px, 90vw, 520px);
+        margin-inline: auto;
     }
 
     .hero__kicker {
+        grid-area: kicker;
+        margin: 0 auto;
+        text-align: center;
         font-size: 16px;
         letter-spacing: 0.1em;
     }
 
+    .hero__side {
+        grid-area: image;
+        order: unset;
+        min-height: 0;
+    }
+
+    .hero__imageWrap {
+        margin-top: -5vh;
+        scale: 0.85;
+    }
+
     .hero__about {
-        font-size: 14px;
-        line-height: 1.75;
+        grid-area: about;
+        max-width: 50ch;
+        margin-inline: auto;
+    }
+
+    .hero__actions {
+        grid-area: actions;
+        justify-content: center;
     }
 }
 
@@ -811,27 +819,6 @@ a:hover {
     }
 }
 
-.carousel::before,
-.carousel::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 80px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.carousel::before {
-    left: -5px;
-    background: linear-gradient(90deg, var(--bg-3) 5%, transparent 100%);
-}
-
-.carousel::after {
-    right: -5px;
-    background: linear-gradient(270deg, var(--bg-3) 5%, transparent 100%);
-}
-
 .carousel__track {
     display: flex;
     gap: var(--gap);
@@ -863,7 +850,24 @@ a:hover {
     aspect-ratio: 4/5;
 }
 
-.slide img {
+.carousel__track {
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0,
+        black 72px,
+        black calc(100% - 72px),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0,
+        black 72px,
+        black calc(100% - 72px),
+        transparent 100%
+    );
+}
+
+.slide {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1643,7 +1647,7 @@ html.home main > section {
 
 .review-card {
     aspect-ratio: auto;
-    min-height: 260px;
+    min-height: 300px;
     padding: 24px 25px 22px;
     display: flex;
     flex-direction: column;
