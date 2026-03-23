@@ -500,6 +500,7 @@ a:hover {
     color: var(--muted);
     font-size: 14px;
     line-height: 1.85;
+    text-align: justify;
 }
 
 .hero__actions {
@@ -848,7 +849,7 @@ a:hover {
     );
 }
 
-.slide {
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
