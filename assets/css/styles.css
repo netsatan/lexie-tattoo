@@ -460,15 +460,14 @@ a:hover {
 
 .hero__logo {
     width: 100%;
-    aspect-ratio: 4 / 1;
+    aspect-ratio: 5 / 2;
     background-color: color-mix(in srgb, var(--text) 80%, var(--muted));
     display: block;
     margin-inline: auto;
     -webkit-mask-source-type: auto;
     -webkit-mask: url("../img/logotyp.svg") center center / contain no-repeat;
     mask: url("../img/logotyp.svg") center center / contain no-repeat;
-    margin-bottom: -10px;
-    scale: 1.2;
+    margin-bottom: -35px;
 }
 
 .hero__grid {
@@ -593,7 +592,6 @@ a:hover {
     }
 
     .hero__logo {
-        margin-top: 5vh;
         grid-area: logo;
         width: clamp(260px, 90vw, 520px);
         overflow-x: clip;
@@ -603,8 +601,8 @@ a:hover {
         grid-area: kicker;
         margin: 0 auto;
         text-align: center;
-        font-size: 16px;
-        letter-spacing: 0.1em;
+        font-size: 15px;
+        letter-spacing: 0.09em;
     }
 
     .hero__side {
@@ -1848,4 +1846,11 @@ html.home main > section {
     .ig-card {
         min-height: 0;
     }
+}
+
+.carousel,
+.container-reviews,
+.section--reviews,
+#works {
+    overflow-x: clip;
 }
