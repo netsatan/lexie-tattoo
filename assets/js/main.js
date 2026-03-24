@@ -560,7 +560,7 @@ async function renderReviews() {
       .map((item) => {
         const name = escapeHTML(item.name || "Anonimowa opinia");
         const year = item.year
-          ? `<span class="review-card__year">${escapeHTML(item.year)}</span>`
+          ? `<span class="review-card__year" style="display: none">${escapeHTML(item.year)}</span>`
           : "";
         const content = escapeHTML(normalizeReviewText(item.content)).replace(
           /\n/g,
