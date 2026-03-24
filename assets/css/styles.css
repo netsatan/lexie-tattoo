@@ -832,7 +832,7 @@ a:hover {
     border-radius: var(--radius);
     overflow: hidden;
     background: var(--bg-2);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.24);
+    box-shadow: var(--shadow);
     position: relative;
     aspect-ratio: 4/5;
 }
