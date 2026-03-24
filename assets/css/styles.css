@@ -611,6 +611,7 @@ a:hover {
         grid-area: image;
         order: unset;
         min-height: 0;
+        margin-inline: auto;
         margin-bottom: -40px;
     }
 
