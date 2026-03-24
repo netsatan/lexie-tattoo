@@ -461,7 +461,7 @@ a:hover {
 .hero__logo {
     width: 100%;
     aspect-ratio: 5 / 2;
-    background-color: color-mix(in srgb, var(--text) 80%, var(--muted));
+    background-color: color-mix(in srgb, var(--text) 20%, var(--muted));
     display: block;
     margin-inline: auto;
     -webkit-mask-source-type: auto;
@@ -536,7 +536,7 @@ a:hover {
     height: auto;
     object-fit: contain;
     object-position: bottom center;
-    filter: contrast(0.4) invert() sepia(0.4);
+    filter: contrast(0.5) invert() sepia(0.3);
 }
 
 @media (prefers-color-scheme: light) {
