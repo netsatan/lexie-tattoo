@@ -524,7 +524,7 @@ a:hover {
     width: min(100%, 720px);
     margin-inline: auto;
     margin-bottom: -320px;
-    margin-top: 10vh;
+    margin-top: 12vh;
     scale: 1.25;
 }
 
@@ -641,7 +641,7 @@ a:hover {
 /* ====== Sections ====== */
 
 .section {
-    padding: 2vh 0;
+    padding: 3vh 0;
 }
 
 .section__title {
@@ -1372,7 +1372,7 @@ uc-file-uploader-minimal {
 
 /* Kontakt: grid ma się rozciągać na wysokość najwyższej kolumny */
 .split--contact {
-    grid-template-columns: 0.9fr 1.15fr 0.75fr;
+    grid-template-columns: 0.8fr 1fr 0.8fr;
     align-items: start;
     margin-bottom: 3vh;
 }
@@ -1896,6 +1896,7 @@ html.home main > section {
 .carousel__dot.is-active {
     background: var(--accent);
     opacity: 1;
+    overflow: visible;
 }
 
 .carousel__dot:focus-visible {
@@ -1912,5 +1913,31 @@ html.home main > section {
     .carousel__dot {
         width: 7px;
         height: 7px;
+    }
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+}
+
+.about__text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about__text {
+        margin-bottom: 3vh;
     }
 }
