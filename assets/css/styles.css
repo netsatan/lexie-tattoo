@@ -646,7 +646,7 @@ a:hover {
 }
 
 .section__title {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.5px;
     margin-bottom: 3vh;
 }
@@ -697,7 +697,7 @@ a:hover {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 24px 25px 22px;
-    background: color-mix(in srgb, var(--bg) 76%, transparent);
+    background: var(--bg);
     box-shadow: var(--shadow);
     font-size: 14px;
 }
@@ -1204,7 +1204,7 @@ a:hover {
     padding: 12px 12px;
     border-radius: 14px;
     border: 1px solid var(--border);
-    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    background: var(--bg);
     color: var(--text);
     font: inherit;
     outline: none;
@@ -1670,7 +1670,7 @@ html.home main > section {
     flex-direction: column;
     gap: 18px;
     border-radius: 20px;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    background: var(--bg);
     border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.24);
 }
