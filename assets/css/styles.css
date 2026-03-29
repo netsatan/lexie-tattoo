@@ -1280,6 +1280,12 @@ uc-file-uploader-minimal {
     padding-bottom: 34px;
 }
 
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
 .portfolio-group {
     margin-top: 22px;
 }
@@ -1430,13 +1436,6 @@ uc-file-uploader-minimal {
     padding: 0;
     overflow: hidden;
     position: relative;
-}
-
-.grid--where_to_find_me {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    padding-bottom: 34px;
 }
 
 .card--map img {
