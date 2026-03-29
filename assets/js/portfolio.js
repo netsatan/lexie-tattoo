@@ -147,10 +147,7 @@ async function renderPortfolio() {
     root.classList.remove("grid");
     root.innerHTML = "";
 
-    const lightboxEnabled = window.matchMedia(
-      "(hover: hover) and (pointer: fine)",
-    ).matches;
-
+    const lightboxEnabled = true;
     const orderedForLightbox = [];
     const lb = lightboxEnabled ? setupLightbox(orderedForLightbox) : null;
 
