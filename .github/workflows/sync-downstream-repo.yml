@@ -17,7 +17,7 @@ jobs:
           github-token: ${{ secrets.FORK_SYNC_TOKEN }}
           script: |
             await github.request('POST /repos/{owner}/{repo}/merge-upstream', {
-              owner: 'your-fork-owner',
-              repo: 'your-fork-name',
+              owner: 'netsatan',
+              repo: 'lexie-tattoo',
               branch: 'main'
             })
