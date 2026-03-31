@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+    image: lexie-tattoo:latest
+    container_name: lexie-tattoo
+    restart: unless-stopped
+    expose:
+      - "80"
