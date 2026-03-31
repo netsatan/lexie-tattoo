@@ -1,0 +1,23 @@
+name: Sync fork on push
+
+on:
+  push:
+    branches:
+      - main # or whatever you care about
+
+jobs:
+  sync_fork:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Sync fork via GitHub API
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.FORK_SYNC_TOKEN }}
+          script: |
+            await github.request('POST /repos/{owner}/{repo}/merge-upstream', {
+              owner: 'your-fork-owner',
+              repo: 'your-fork-name',
+              branch: 'main'
+            })
