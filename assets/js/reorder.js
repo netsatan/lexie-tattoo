@@ -53,14 +53,22 @@ function normalizeGroups(data, items) {
     groups = data.groups.map((g, idx) => ({
       id: String(g?.id || `g${idx}`),
       name: String(g?.name || ""),
-      items: Array.isArray(g?.items) ? g.items : (Array.isArray(g?.ids) ? g.ids : []),
+      items: Array.isArray(g?.items)
+        ? g.items
+        : Array.isArray(g?.ids)
+          ? g.ids
+          : [],
     }));
   } else {
-    groups = [{ id: DEFAULT_GROUP_ID, name: DEFAULT_GROUP_NAME, items: idsAll.slice() }];
+    groups = [
+      { id: DEFAULT_GROUP_ID, name: DEFAULT_GROUP_NAME, items: idsAll.slice() },
+    ];
   }
 
   // ensure default group exists + pinned on top
-  let def = groups.find((g) => String(g.name).trim().toLowerCase() === DEFAULT_GROUP_KEY);
+  let def = groups.find(
+    (g) => String(g.name).trim().toLowerCase() === DEFAULT_GROUP_KEY,
+  );
   if (!def) {
     def = { id: DEFAULT_GROUP_ID, name: DEFAULT_GROUP_NAME, items: [] };
     groups.unshift(def);
@@ -74,7 +82,7 @@ function normalizeGroups(data, items) {
   const assigned = new Set();
   for (const g of groups) {
     const cleaned = [];
-    for (const id of (g.items || [])) {
+    for (const id of g.items || []) {
       if (!idSet.has(id)) continue;
       if (assigned.has(id)) continue;
       assigned.add(id);
@@ -178,7 +186,7 @@ function buildItemRow(item, { onFeaturedChange, statusEl }) {
   alt.className = "alt";
   alt.type = "text";
   alt.value = item.alt || "";
-  alt.placeholder = "Opis (alt)";
+  alt.placeholder = "Opis PRISM Warszawa Mokotów (alt)";
 
   alt.addEventListener("input", () => {
     item.alt = alt.value;
@@ -199,7 +207,9 @@ function buildItemRow(item, { onFeaturedChange, statusEl }) {
   chk.addEventListener("change", () => {
     item.featured = chk.checked;
     onFeaturedChange(item);
-    if (statusEl) statusEl.textContent = "Zmieniono ustawienia karuzeli (pamiętaj pobrać JSON).";
+    if (statusEl)
+      statusEl.textContent =
+        "Zmieniono ustawienia karuzeli (pamiętaj pobrać JSON).";
   });
 
   label.append(chk, document.createTextNode(" str. główna"));
@@ -228,7 +238,8 @@ function buildItemRow(item, { onFeaturedChange, statusEl }) {
     if (dir < 0) list.insertBefore(row, target);
     else list.insertBefore(target, row); // swap
 
-    if (statusEl) statusEl.textContent = "Zmieniono kolejność (pamiętaj pobrać JSON).";
+    if (statusEl)
+      statusEl.textContent = "Zmieniono kolejność (pamiętaj pobrać JSON).";
   });
 
   row.tabIndex = 0;
@@ -288,24 +299,23 @@ async function init() {
     }
   };
 
-const getGroupNameByItemId = (id) => {
-  const groupEls = Array.from(groupsRoot.querySelectorAll(".group"));
-  for (const gEl of groupEls) {
-    const listEl = gEl.querySelector("[data-role='list']");
-    if (!listEl) continue;
+  const getGroupNameByItemId = (id) => {
+    const groupEls = Array.from(groupsRoot.querySelectorAll(".group"));
+    for (const gEl of groupEls) {
+      const listEl = gEl.querySelector("[data-role='list']");
+      if (!listEl) continue;
 
-    const has = Array.from(listEl.querySelectorAll(".row--item[data-id]")).some(
-      (el) => el.dataset.id === id,
-    );
-    if (!has) continue;
+      const has = Array.from(
+        listEl.querySelectorAll(".row--item[data-id]"),
+      ).some((el) => el.dataset.id === id);
+      if (!has) continue;
 
-    const nameEl = gEl.querySelector("[data-role='name']");
-    const v = (nameEl?.value ?? nameEl?.textContent ?? "").trim();
-    return v || "";
-  }
-  return "";
-};
-
+      const nameEl = gEl.querySelector("[data-role='name']");
+      const v = (nameEl?.value ?? nameEl?.textContent ?? "").trim();
+      return v || "";
+    }
+    return "";
+  };
 
   const refreshFeaturedSubtitles = () => {
     for (const [id, row] of featuredRowById.entries()) {
@@ -330,7 +340,8 @@ const getGroupNameByItemId = (id) => {
     row.addEventListener("dragend", () => {
       row.classList.remove("dragging");
       draggingFeaturedRow = null;
-      status.textContent = "Zmieniono kolejność karuzeli (pamiętaj pobrać JSON).";
+      status.textContent =
+        "Zmieniono kolejność karuzeli (pamiętaj pobrać JSON).";
     });
 
     if (appendToEnd) featuredRoot.append(row);
@@ -343,34 +354,35 @@ const getGroupNameByItemId = (id) => {
     featuredRowById.delete(id);
   };
 
-const onFeaturedChange = (item) => {
-  if (item.featured) {
-    // jeśli była informacja „Brak prac…”, usuń ją przy pierwszym dodaniu
-    if (!featuredRoot.querySelector(".row--featured")) {
-      featuredRoot.innerHTML = "";
+  const onFeaturedChange = (item) => {
+    if (item.featured) {
+      // jeśli była informacja „Brak prac…”, usuń ją przy pierwszym dodaniu
+      if (!featuredRoot.querySelector(".row--featured")) {
+        featuredRoot.innerHTML = "";
+      }
+
+      ensureFeaturedRow(item, { appendToEnd: true });
+      refreshFeaturedSubtitles();
+    } else {
+      removeFeaturedRow(item.id);
     }
 
-    ensureFeaturedRow(item, { appendToEnd: true });
-    refreshFeaturedSubtitles();
-  } else {
-    removeFeaturedRow(item.id);
-  }
-
-  // Komunikat w UI gdy nic nie ma
-  const any = featuredRoot.querySelectorAll(".row--featured").length;
-  if (!any) {
-    featuredRoot.innerHTML = "";
-    featuredRoot.append(
-      "Brak prac w karuzeli — zaznacz „str. główna” w portfolio.",
-    );
-  }
-};
-
+    // Komunikat w UI gdy nic nie ma
+    const any = featuredRoot.querySelectorAll(".row--featured").length;
+    if (!any) {
+      featuredRoot.innerHTML = "";
+      featuredRoot.append(
+        "Brak prac w karuzeli — zaznacz „str. główna” w portfolio.",
+      );
+    }
+  };
 
   // ====== Render featured list (carousel order) ======
   featuredRoot.innerHTML = "";
   if (featuredOrder.length === 0) {
-    featuredRoot.append("Brak prac w karuzeli — zaznacz „str. główna” w portfolio.");
+    featuredRoot.append(
+      "Brak prac w karuzeli — zaznacz „str. główna” w portfolio.",
+    );
   } else {
     for (const id of featuredOrder) {
       const item = byId.get(id);
@@ -416,7 +428,8 @@ const onFeaturedChange = (item) => {
 
   // ====== Render groups ======
   const renderGroup = (group) => {
-    const isPinned = String(group.name).trim().toLowerCase() === DEFAULT_GROUP_KEY;
+    const isPinned =
+      String(group.name).trim().toLowerCase() === DEFAULT_GROUP_KEY;
 
     const groupEl = document.createElement("div");
     groupEl.className = "group" + (isPinned ? " group--pinned" : "");
@@ -495,7 +508,7 @@ const onFeaturedChange = (item) => {
     groupEl.append(head, list);
 
     // append initial items
-    for (const id of (group.items || [])) {
+    for (const id of group.items || []) {
       const row = itemRowById.get(id);
       if (row) list.append(row);
     }
@@ -584,9 +597,10 @@ const onFeaturedChange = (item) => {
 
       return {
         id,
-        name: (String(name).trim().toLowerCase() === DEFAULT_GROUP_KEY)
-          ? DEFAULT_GROUP_NAME
-          : name,
+        name:
+          String(name).trim().toLowerCase() === DEFAULT_GROUP_KEY
+            ? DEFAULT_GROUP_NAME
+            : name,
         items: itemIds,
       };
     });
