@@ -1,34 +1,60 @@
 <!doctype html>
+
 <html lang="pl">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         <title>404 | Lexie Tattoo</title>
-
-        <link rel="icon" href="./assets/img/hero.svg" />
-        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link href="./assets/img/hero.svg" rel="icon" />
+        <link href="./assets/css/styles.css" rel="stylesheet" />
+        <meta
+            content="Nie znaleziono strony. Wróć na stronę główną Lexie Tattoo albo przejdź do portfolio."
+            name="description"
+        />
+        <link href="https://lexietattoo.pl/404.html" rel="canonical" />
+        <meta content="404 | Lexie Tattoo" property="og:title" />
+        <meta
+            content="Nie znaleziono strony. Wróć na stronę główną Lexie Tattoo albo przejdź do portfolio."
+            property="og:description"
+        />
+        <meta content="website" property="og:type" />
+        <meta content="https://lexietattoo.pl/404.html" property="og:url" />
+        <meta
+            content="https://lexietattoo.pl/assets/img/ig_profile_pic.jpg"
+            property="og:image"
+        />
+        <meta content="Lexie Tattoo" property="og:site_name" />
+        <meta content="pl_PL" property="og:locale" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="404 | Lexie Tattoo" name="twitter:title" />
+        <meta
+            content="Nie znaleziono strony. Wróć na stronę główną Lexie Tattoo albo przejdź do portfolio."
+            name="twitter:description"
+        />
+        <meta content="#3d352c" name="theme-color" />
+        <meta content="noindex,follow" name="robots" />
     </head>
-
     <body>
         <header class="site-header">
             <div class="container">
-                <nav class="nav" aria-label="Nawigacja główna" data-nav>
+                <nav aria-label="Nawigacja główna" class="nav" data-nav="">
                     <button
-                        class="nav__toggle"
-                        type="button"
                         aria-controls="navLinks"
                         aria-expanded="false"
+                        class="nav__toggle"
+                        type="button"
                     >
                         <span class="sr-only">Menu</span>
-                        <span class="nav__toggleIcon" aria-hidden="true"></span>
+                        <span aria-hidden="true" class="nav__toggleIcon"></span>
                     </button>
-
-                    <div class="nav__links" id="navLinks" data-nav-links>
+                    <div class="nav__links" data-nav-links="" id="navLinks">
                         <a href="./">Strona główna</a>
                         <a href="./portfolio/">Portfolio</a>
                         <a href="./faq/">FAQ</a>
                     </div>
-
                     <div class="nav__cta">
                         <a class="btn btn--primary" href="./#contact"
                             >Zapisz się!</a
@@ -37,7 +63,6 @@
                 </nav>
             </div>
         </header>
-
         <main>
             <section class="hero">
                 <div class="container">
@@ -64,7 +89,6 @@
                 </div>
             </section>
         </main>
-
         <script type="module">
             import { initSite } from "./assets/js/site.js";
             window.addEventListener("DOMContentLoaded", initSite);

@@ -496,8 +496,11 @@ async function renderFeatured() {
       const img = document.createElement("img");
       img.src = src;
       img.alt = item.alt || "Tatuaż – praca Lexie";
-      img.loading = "eager";
+      img.loading = "lazy";
+      img.fetchPriority = "low";
       img.decoding = "async";
+      if (item.width) img.width = item.width;
+      if (item.height) img.height = item.height;
       img.draggable = false;
 
       const fig = document.createElement("figure");
@@ -575,7 +578,7 @@ async function renderReviews() {
                 <h3 class="review-card__name">${name}</h3>
                 ${year}
               </div>
-              <div class="review-card__stars" aria-label="Ocena ${rating} na 5">
+              <div class="review-card__stars" role="img" aria-label="Ocena ${rating} na 5">
                 ${renderStars(rating)}
               </div>
             </div>

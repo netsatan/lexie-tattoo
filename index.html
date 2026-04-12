@@ -1,50 +1,53 @@
 <!doctype html>
 
-<html lang="pl" class="home">
+<html class="home" lang="pl">
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         <title>
             Lexie Tattoo – fine line i blackwork | tatuaże Warszawa Mokotów
         </title>
         <meta
-            content="Lexie Tattoo/ Minimalistyczne tatuaże / booking / portfolio – Lexie (@lexietattoo)."
+            content="Fine line i blackwork w Warszawie (Mokotów). Kobiece, ilustracyjne i botaniczne tatuaże, wolne wzory, portfolio i zapisy na sesje u Lexie Tattoo."
             name="description"
         />
         <!-- Open Graph -->
-        <meta content="Lexie Tattoo" property="og:title" />
         <meta
-            content="Minimalistyczne tatuaże / booking / portfolio – Lexie (@lexietattoo)."
+            content="Lexie Tattoo – fine line i blackwork | tatuaże Warszawa Mokotów"
+            property="og:title"
+        />
+        <meta
+            content="Fine line i blackwork w Warszawie (Mokotów). Kobiece, ilustracyjne i botaniczne tatuaże, wolne wzory, portfolio i zapisy na sesje u Lexie Tattoo."
             property="og:description"
         />
         <meta content="website" property="og:type" />
-        <meta content="./assets/img/ig_profile_pic.jpg" property="og:image" />
-        <link rel="icon" href="./assets/img/hero.svg" type="image/svg+xml" />
-
+        <meta
+            content="https://lexietattoo.pl/assets/img/ig_profile_pic.jpg"
+            property="og:image"
+        />
+        <link href="./assets/img/hero.svg" rel="icon" type="image/svg+xml" />
         <link
-            rel="icon"
             href="./assets/img/hero_48.png"
-            type="image/png"
-            sizes="48x48"
-        />
-        <link
             rel="icon"
-            href="./assets/img/hero_192.png"
+            sizes="48x48"
             type="image/png"
-            sizes="192x192"
         />
-
         <link
-            rel="apple-touch-icon"
             href="./assets/img/hero_192.png"
+            rel="icon"
+            sizes="192x192"
+            type="image/png"
+        />
+        <link
+            href="./assets/img/hero_192.png"
+            rel="apple-touch-icon"
             sizes="192x192"
         />
-
         <link href="./assets/css/styles.css" rel="stylesheet" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/uc-file-uploader-minimal.min.css"
-            rel="stylesheet"
-        />
+
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -57,8 +60,9 @@
                         "image": [
                             "https://lexietattoo.pl/assets/img/ig_profile_pic.jpg"
                         ],
-                        "description": "Lexie Tattoo – tworzę subtelne, graficzne tatuaże inspirowane naturą i kobiecością, specjalizując się w stylach fine line i blackwork.",
+                        "description": "Lexie Tattoo – subtelne tatuaże inspirowane naturą, secesją i kobiecymi motywami. Fine line, blackwork i autorskie wzory w Warszawie.",
                         "priceRange": "$$",
+                        "telephone": "+48 790 340 440",
                         "address": {
                             "@type": "PostalAddress",
                             "streetAddress": "Puławska 41/26",
@@ -81,6 +85,7 @@
                             }
                         ],
                         "sameAs": ["https://www.instagram.com/lexietattoo/"],
+                        "hasMap": "https://maps.app.goo.gl/jwE6DrTtevjHMHL5A?g_st=ic",
                         "areaServed": {
                             "@type": "City",
                             "name": "Warszawa"
@@ -100,7 +105,7 @@
                         "@type": "WebPage",
                         "@id": "https://lexietattoo.pl/#webpage",
                         "url": "https://lexietattoo.pl/",
-                        "name": "Lexie Tattoo",
+                        "name": "Lexie Tattoo – fine line i blackwork | tatuaże Warszawa Mokotów",
                         "isPartOf": {
                             "@id": "https://lexietattoo.pl/#website"
                         },
@@ -112,29 +117,41 @@
                 ]
             }
         </script>
+        <link href="https://lexietattoo.pl/" rel="canonical" />
+        <meta content="https://lexietattoo.pl/" property="og:url" />
+        <meta content="Lexie Tattoo" property="og:site_name" />
+        <meta content="pl_PL" property="og:locale" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta
+            content="Lexie Tattoo – fine line i blackwork | tatuaże Warszawa Mokotów"
+            name="twitter:title"
+        />
+        <meta
+            content="Fine line i blackwork w Warszawie (Mokotów). Kobiece, ilustracyjne i botaniczne tatuaże, wolne wzory, portfolio i zapisy na sesje u Lexie Tattoo."
+            name="twitter:description"
+        />
+        <meta content="#3d352c" name="theme-color" />
     </head>
     <body>
         <header class="site-header">
             <div class="container">
-                <nav class="nav" aria-label="Nawigacja główna" data-nav>
+                <nav aria-label="Nawigacja główna" class="nav" data-nav="">
                     <button
-                        class="nav__toggle"
-                        type="button"
                         aria-controls="navLinks"
                         aria-expanded="false"
+                        class="nav__toggle"
+                        type="button"
                     >
                         <span class="sr-only">Menu</span>
-                        <span class="nav__toggleIcon" aria-hidden="true"></span>
+                        <span aria-hidden="true" class="nav__toggleIcon"></span>
                     </button>
-
-                    <div class="nav__links" id="navLinks" data-nav-links>
-                        <a href="./" aria-current="page">Strona główna</a>
+                    <div class="nav__links" data-nav-links="" id="navLinks">
+                        <a aria-current="page" href="./">Strona główna</a>
                         <a href="./portfolio/">Portfolio</a>
                         <a href="./available_designs/">Wolne wzory</a>
                         <a href="./faq/">FAQ</a>
                         <a href="./about/">O mnie</a>
                     </div>
-
                     <div class="nav__cta">
                         <a class="btn btn--primary" href="./#contact"
                             >Zapisz się!</a
@@ -147,50 +164,55 @@
             <section class="hero">
                 <div class="container">
                     <h1 class="sr-only">Lexie Tattoo</h1>
-
                     <div
-                        class="hero__title reveal"
-                        role="img"
                         aria-label="Lexie Tattoo"
+                        class="hero__title"
+                        role="img"
                     ></div>
-
                     <div class="hero__grid">
-                        <div class="hero__content reveal">
-                            <span class="hero__logo" aria-hidden="true"></span>
+                        <div class="hero__content">
+                            <span aria-hidden="true" class="hero__logo"></span>
                             <p class="hero__kicker">
                                 Tattoo ✧ Fine Line ✧ Blackwork
                             </p>
-
                             <p class="hero__about">
                                 Tworzę subtelne, graficzne tatuaże inspirowane
                                 naturą i kobiecością, w których liczy się każdy
                                 detal.
                             </p>
-
                             <div class="hero__actions">
                                 <a
                                     class="btn btn--ghost"
-                                    style="width: 150px"
                                     href="./available_designs/"
+                                    style="width: 150px"
                                     >Wolne wzory</a
                                 >
-
                                 <a
                                     class="btn btn--ghost"
-                                    style="width: 150px"
                                     href="#where_to_find_me"
-                                    >Lokalizacja</a
+                                    style="width: 150px"
+                                    >Dojazd i adres</a
                                 >
                             </div>
                         </div>
-
-                        <div class="hero__side reveal">
+                        <div class="hero__side">
                             <div class="hero__imageWrap">
-                                <img
-                                    class="hero__image"
-                                    src="./assets/img/hero.png"
-                                    alt="Alfons Mucha"
-                                />
+                                <picture
+                                    ><source
+                                        sizes="(max-width: 900px) 92vw, (max-width: 1100px) 45vw, 560px"
+                                        srcset="
+                                            ./assets/img/hero-380.webp 380w,
+                                            ./assets/img/hero-618.webp 618w
+                                        "
+                                        type="image/webp" />
+                                    <img
+                                        alt="Alfons Mucha"
+                                        class="hero__image"
+                                        decoding="async"
+                                        height="1196"
+                                        src="./assets/img/hero.png"
+                                        width="618"
+                                /></picture>
                             </div>
                         </div>
                     </div>
@@ -212,7 +234,6 @@
                         id="featuredTrack"
                     ></div>
                 </div>
-
                 <div
                     class="container"
                     style="
@@ -223,13 +244,12 @@
                 >
                     <a
                         class="btn btn--primary"
-                        style="width: 150px"
                         href="./portfolio/"
+                        style="width: 150px"
                         >Portfolio</a
                     >
                 </div>
             </section>
-
             <section class="section section--contact" id="contact">
                 <div class="container">
                     <h2 class="section__title reviews__title reveal">
@@ -242,10 +262,9 @@
                         <div class="contact__info">
                             <div class="experience experience--contact">
                                 <div
-                                    class="experience__line"
                                     aria-hidden="true"
+                                    class="experience__line"
                                 ></div>
-
                                 <article class="experience__step reveal">
                                     <div class="experience__dot">1</div>
                                     <div class="experience__content">
@@ -261,7 +280,6 @@
                                         </p>
                                     </div>
                                 </article>
-
                                 <article class="experience__step reveal">
                                     <div class="experience__dot">2</div>
                                     <div class="experience__content">
@@ -274,7 +292,6 @@
                                         </p>
                                     </div>
                                 </article>
-
                                 <article class="experience__step reveal">
                                     <div class="experience__dot">3</div>
                                     <div class="experience__content">
@@ -288,7 +305,6 @@
                                         </p>
                                     </div>
                                 </article>
-
                                 <article class="experience__step reveal">
                                     <div class="experience__dot">4</div>
                                     <div class="experience__content">
@@ -305,7 +321,6 @@
                                 </article>
                             </div>
                         </div>
-
                         <div class="card contact__formCard reveal">
                             <form
                                 class="form"
@@ -321,24 +336,29 @@
                                         id="name"
                                         name="entry.2005620554"
                                         pattern="^[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ]+(?:[-'’][A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ]+)*\s+[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ]+(?:[-'’][A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ]+)*(?:\s+[A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ]+(?:[-'’][A-ZÀ-ÖØ-Ý][A-Za-zÀ-ÖØ-öø-ÿĀ-žḀ-ỿ]+)*)*$"
-                                        required
+                                        required=""
                                     />
                                 </div>
                                 <div class="field">
-                                    <label for="fp_email">E-Mail</label>
+                                    <label for="email">E-Mail</label>
                                     <input
-                                        id="fp_email"
-                                        name="entry.1166974658"
-                                        type="email"
-                                        inputmode="email"
                                         autocomplete="email"
+                                        id="email"
+                                        inputmode="email"
+                                        name="entry.1166974658"
                                         pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
-                                        required
+                                        required=""
+                                        type="email"
                                     />
                                 </div>
                                 <div class="field">
                                     <label for="msg">Wiadomość</label>
-                                    <textarea id="msg" name="entry.839337160">
+                                    <textarea
+                                        id="msg"
+                                        name="entry.839337160"
+                                        required=""
+                                        rows="5"
+                                    >
 ✧ Pomysł na wzór:
 ✧ Miejsce na ciele:
 ✧ Rozmiar (cm):</textarea
@@ -384,17 +404,29 @@
                                 title="Google Forms submit"
                             ></iframe>
                         </div>
-
                         <div class="card ig-card reveal">
                             <a
                                 class="ig-profile__link"
                                 href="https://instagram.com/lexietattoo"
+                                rel="noopener noreferrer"
                                 target="_blank"
                             >
-                                <img
-                                    alt="Profil Instagram Lexie"
-                                    src="./assets/img/ig_profile_pic.jpg"
-                                />
+                                <picture
+                                    ><source
+                                        sizes="159px"
+                                        srcset="
+                                            ./assets/img/ig_profile_pic-160.webp 160w,
+                                            ./assets/img/ig_profile_pic-320.webp 320w
+                                        "
+                                        type="image/webp" />
+                                    <img
+                                        alt="Profil Instagram Lexie"
+                                        decoding="async"
+                                        height="449"
+                                        loading="lazy"
+                                        src="./assets/img/ig_profile_pic.jpg"
+                                        width="449"
+                                /></picture>
                             </a>
                             <span class="ig-counter"
                                 ><strong>14 tys.</strong> obserwujących</span
@@ -402,12 +434,13 @@
                             <a
                                 class="btn btn--primary btn--ig"
                                 href="https://instagram.com/lexietattoo"
+                                rel="noopener noreferrer"
                                 target="_blank"
                             >
                                 <svg
                                     class="icon icon--ig"
                                     fill="currentColor"
-                                    viewbox="0 0 16 16"
+                                    viewBox="0 0 16 16"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
@@ -419,13 +452,14 @@
                             <a
                                 class="btn btn--primary btn--ig"
                                 href="https://ig.me/m/lexietattoo"
+                                rel="noopener noreferrer"
                                 target="_blank"
                             >
                                 <svg
                                     aria-hidden="true"
                                     class="icon icon--stroke"
                                     fill="none"
-                                    viewbox="0 0 24 24"
+                                    viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
@@ -449,7 +483,6 @@
                     </div>
                 </div>
             </section>
-
             <section class="section section--reviews" id="reviews">
                 <div class="container">
                     <div class="reviews__header reveal">
@@ -488,13 +521,26 @@
                     <div class="split split--where_to_find_me reveal">
                         <div class="card card--map">
                             <a
+                                aria-label="Otwórz lokalizację studia PRISM Tattoo w Google Maps"
                                 class="mapLink"
                                 href="https://maps.app.goo.gl/jwE6DrTtevjHMHL5A?g_st=ic"
                             >
-                                <img
-                                    alt="lokalizacja"
-                                    src="./assets/img/map.png"
-                                />
+                                <picture
+                                    ><source
+                                        sizes="(max-width: 900px) 100vw, 50vw"
+                                        srcset="
+                                            ./assets/img/map-370.webp 370w,
+                                            ./assets/img/map-740.webp 740w
+                                        "
+                                        type="image/webp" />
+                                    <img
+                                        alt="Mapa dojazdu do studia PRISM Tattoo w Warszawie"
+                                        decoding="async"
+                                        height="1101"
+                                        loading="lazy"
+                                        src="./assets/img/map.png"
+                                        width="1100"
+                                /></picture>
                             </a>
                         </div>
                         <div class="card" style="margin-bottom: 5vh">
@@ -517,7 +563,6 @@
                                     >
                                 </li>
                             </ul>
-
                             <p style="text-align: justify; margin-bottom: 20px">
                                 Studio jest świetnie skomunikowane. W
                                 najbliższej okolicy znajdują się dwa przystanki:
@@ -538,69 +583,148 @@
                     </div>
                     <div class="grid" style="filter: saturate(0.8)">
                         <div class="slide">
-                            <img
-                                src="./assets/img/studio/wejscie.jpeg"
-                                alt="Wejście"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/wejscie-360.webp 360w,
+                                        ./assets/img/studio/wejscie-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Wejście do studia"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/wejscie.jpeg"
+                                    width="1024"
+                            /></picture>
                         </div>
                         <div class="slide">
-                            <img
-                                src="./assets/img/studio/wejscie2.jpeg"
-                                alt="Wejście"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-
-                        <div class="slide">
-                            <img
-                                src="./assets/img/studio/stanowisko.jpeg"
-                                alt="Stanowisko"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </div>
-                        <div class="slide">
-                            <img
-                                src="./assets/img/studio/stanowisko2.jpeg"
-                                alt="Stanowisko"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/wejscie2-360.webp 360w,
+                                        ./assets/img/studio/wejscie2-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Wejście do studia"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/wejscie2.jpeg"
+                                    width="1024"
+                            /></picture>
                         </div>
                         <div class="slide">
-                            <img
-                                src="./assets/img/studio/pokoj.jpeg"
-                                alt="Pokój"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/stanowisko-360.webp 360w,
+                                        ./assets/img/studio/stanowisko-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Stanowisko do tatuażu"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/stanowisko.jpeg"
+                                    width="1024"
+                            /></picture>
                         </div>
                         <div class="slide">
-                            <img
-                                src="./assets/img/studio/poczekalnia.jpeg"
-                                alt="Poczekalnia"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/stanowisko2-360.webp 360w,
+                                        ./assets/img/studio/stanowisko2-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Stanowisko do tatuażu"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/stanowisko2.jpeg"
+                                    width="1024"
+                            /></picture>
                         </div>
                         <div class="slide">
-                            <img
-                                src="./assets/img/studio/poczekalnia2.jpeg"
-                                alt="Poczekalnia"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/pokoj-360.webp 360w,
+                                        ./assets/img/studio/pokoj-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Pokój w studiu"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/pokoj.jpeg"
+                                    width="1024"
+                            /></picture>
                         </div>
                         <div class="slide">
-                            <img
-                                src="./assets/img/studio/poczekalnia3.jpeg"
-                                alt="Poczekalnia"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/poczekalnia-360.webp 360w,
+                                        ./assets/img/studio/poczekalnia-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Poczekalnia w studiu"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/poczekalnia.jpeg"
+                                    width="1024"
+                            /></picture>
+                        </div>
+                        <div class="slide">
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/poczekalnia2-360.webp 360w,
+                                        ./assets/img/studio/poczekalnia2-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Poczekalnia w studiu"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/poczekalnia2.jpeg"
+                                    width="1024"
+                            /></picture>
+                        </div>
+                        <div class="slide">
+                            <picture
+                                ><source
+                                    sizes="(max-width: 600px) 50vw, (max-width: 1200px) 33vw, 300px"
+                                    srcset="
+                                        ./assets/img/studio/poczekalnia3-360.webp 360w,
+                                        ./assets/img/studio/poczekalnia3-720.webp 720w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Poczekalnia w studiu"
+                                    decoding="async"
+                                    height="1280"
+                                    loading="lazy"
+                                    src="./assets/img/studio/poczekalnia3.jpeg"
+                                    width="1024"
+                            /></picture>
                         </div>
                     </div>
                 </div>
@@ -609,7 +733,7 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer__row">
-                    <div>© <span data-year></span> Lexie Tattoo</div>
+                    <div>© <span data-year=""></span> Lexie Tattoo</div>
                     <div>
                         <a href="./terms_of_service/">Regulamin PRISM</a>
                     </div>

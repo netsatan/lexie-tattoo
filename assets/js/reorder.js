@@ -261,7 +261,7 @@ async function init() {
 
   let data, url;
   try {
-    ({ data, url } = await fetchJSON(DATA_URL));
+    ({ data, url } = await fetchJSON(DATA_URL, { cache: "no-store" }));
   } catch (err) {
     console.error(err);
     status.textContent =

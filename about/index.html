@@ -1,57 +1,58 @@
 <!doctype html>
 
-<html lang="pl" class="home">
+<html class="home" lang="pl">
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         <title>O mnie | Lexie Tattoo</title>
         <meta
-            content="Lexie Tattoo/ Minimalistyczne tatuaże / booking / portfolio – Lexie (@lexietattoo)."
+            content="Poznaj Lexie – tatuatorkę z Warszawy tworzącą subtelne projekty inspirowane secesją, naturą i kobiecymi motywami."
             name="description"
         />
         <!-- Open Graph -->
-        <meta content="Lexie Tattoo" property="og:title" />
+        <meta content="O mnie | Lexie Tattoo" property="og:title" />
         <meta
-            content="Minimalistyczne tatuaże / booking / portfolio – Lexie (@lexietattoo)."
+            content="Poznaj Lexie – tatuatorkę z Warszawy tworzącą subtelne projekty inspirowane secesją, naturą i kobiecymi motywami."
             property="og:description"
         />
         <meta content="website" property="og:type" />
-        <meta content="../assets/img/ig_profile_pic.jpg" property="og:image" />
-        <link rel="icon" href="../assets/img/about.svg" type="image/svg+xml" />
-
+        <meta
+            content="https://lexietattoo.pl/assets/img/ig_profile_pic.jpg"
+            property="og:image"
+        />
+        <link href="../assets/img/hero.svg" rel="icon" type="image/svg+xml" />
         <link
+            href="../assets/img/hero_48.png"
             rel="icon"
-            href="../assets/img/about_48.png"
-            type="image/png"
             sizes="48x48"
-        />
-        <link
-            rel="icon"
-            href="../assets/img/about_192.png"
             type="image/png"
-            sizes="192x192"
         />
-
         <link
+            href="../assets/img/hero_192.png"
+            rel="icon"
+            sizes="192x192"
+            type="image/png"
+        />
+        <link
+            href="../assets/img/hero_192.png"
             rel="apple-touch-icon"
-            href="../assets/img/about_192.png"
             sizes="192x192"
         />
-
         <link href="../assets/css/styles.css" rel="stylesheet" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/uc-file-uploader-minimal.min.css"
-            rel="stylesheet"
-        />
+
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@graph": [
                     {
-                        "@type": "WebPage",
+                        "@type": "AboutPage",
                         "@id": "https://lexietattoo.pl/about/#webpage",
                         "url": "https://lexietattoo.pl/about/",
                         "name": "O mnie | Lexie Tattoo",
+                        "description": "Poznaj Lexie – tatuatorkę z Warszawy tworzącą subtelne projekty inspirowane secesją, naturą i kobiecymi motywami.",
                         "inLanguage": "pl-PL",
                         "isPartOf": {
                             "@id": "https://lexietattoo.pl/#website"
@@ -69,7 +70,7 @@
                         "name": "Lexie",
                         "url": "https://lexietattoo.pl/about/",
                         "jobTitle": "Tattoo Artist",
-                        "description": "Lexie Tattoo – tatuatorka z Warszawy, tworząca subtelne tatuaże w stylach fine line i blackwork, inspirowane secesją, naturą, kobiecymi motywami i twórczością Alfonsa Muchy.",
+                        "description": "Tatuażystka z Warszawy specjalizująca się w stylach fine line i blackwork, inspirowana secesją, naturą i kobiecymi motywami.",
                         "sameAs": ["https://www.instagram.com/lexietattoo/"],
                         "worksFor": {
                             "@id": "https://lexietattoo.pl/#tattoo-parlor"
@@ -96,31 +97,40 @@
                 ]
             }
         </script>
+        <link href="https://lexietattoo.pl/about/" rel="canonical" />
+        <meta content="https://lexietattoo.pl/about/" property="og:url" />
+        <meta content="Lexie Tattoo" property="og:site_name" />
+        <meta content="pl_PL" property="og:locale" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="O mnie | Lexie Tattoo" name="twitter:title" />
+        <meta
+            content="Poznaj Lexie – tatuatorkę z Warszawy tworzącą subtelne projekty inspirowane secesją, naturą i kobiecymi motywami."
+            name="twitter:description"
+        />
+        <meta content="#3d352c" name="theme-color" />
     </head>
     <body>
         <header class="site-header">
             <div class="container">
-                <nav class="nav" aria-label="Nawigacja główna" data-nav>
+                <nav aria-label="Nawigacja główna" class="nav" data-nav="">
                     <button
-                        class="nav__toggle"
-                        type="button"
                         aria-controls="navLinks"
                         aria-expanded="false"
+                        class="nav__toggle"
+                        type="button"
                     >
                         <span class="sr-only">Menu</span>
-                        <span class="nav__toggleIcon" aria-hidden="true"></span>
+                        <span aria-hidden="true" class="nav__toggleIcon"></span>
                     </button>
-
-                    <div class="nav__links" id="navLinks" data-nav-links>
+                    <div class="nav__links" data-nav-links="" id="navLinks">
                         <a href="../">Strona główna</a>
                         <a href="../portfolio/">Portfolio</a>
                         <a href="../available_designs/">Wolne wzory</a>
                         <a href="../faq/">FAQ</a>
-                        <a href="./" aria-current="page">O mnie</a>
+                        <a aria-current="page" href="./">O mnie</a>
                     </div>
-
                     <div class="nav__cta">
-                        <a class="btn btn--primary" href="./#contact"
+                        <a class="btn btn--primary" href="../#contact"
                             >Zapisz się!</a
                         >
                     </div>
@@ -168,34 +178,41 @@
                                 biegam, zbieram piórka, głaszczę koty i gram w
                                 gry.
                             </p>
-
                             <div
                                 class="hero__actions"
                                 style="justify-content: center"
                             >
                                 <a
                                     class="btn btn--ghost"
-                                    style="width: 150px"
                                     href="../available_designs/"
+                                    style="width: 150px"
                                     >Wolne wzory</a
                                 >
-
                                 <a
                                     class="btn btn--ghost"
-                                    style="width: 150px"
                                     href="../#where_to_find_me"
+                                    style="width: 150px"
                                     >Lokalizacja</a
                                 >
                             </div>
                         </div>
-
                         <div class="slide">
-                            <img
-                                src="../assets/img/lexie.jpg"
-                                alt="Lexie"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture
+                                ><source
+                                    sizes="(max-width: 1100px) 100vw, 45vw"
+                                    srcset="
+                                        ../assets/img/lexie-600.webp   600w,
+                                        ../assets/img/lexie-1000.webp 1000w
+                                    "
+                                    type="image/webp" />
+                                <img
+                                    alt="Lexie"
+                                    decoding="async"
+                                    height="2500"
+                                    loading="lazy"
+                                    src="../assets/img/lexie.jpg"
+                                    width="2000"
+                            /></picture>
                         </div>
                     </div>
                 </div>
@@ -204,13 +221,13 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer__row">
-                    <div>© <span data-year></span> Lexie Tattoo</div>
+                    <div>© <span data-year=""></span> Lexie Tattoo</div>
                     <div>
                         <a href="../terms_of_service/">Regulamin PRISM</a>
                     </div>
                 </div>
             </div>
         </footer>
-        <script src="../assets/js/main.js" type="module"></script>
+        <script src="../assets/js/base.js" type="module"></script>
     </body>
 </html>

@@ -1,34 +1,36 @@
 <!doctype html>
-<html lang="pl" class="faq-page">
+
+<html class="faq-page" lang="pl">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         <title>Pytania i odpowiedzi | Lexie Tattoo</title>
         <meta
+            content="Najczęstsze pytania o zapisy, ceny, przygotowanie do sesji i pielęgnację tatuażu u Lexie Tattoo."
             name="description"
-            content="FAQ — najczęstsze pytania o tatuaże, proces, pielęgnację i booking."
         />
-
-        <link rel="icon" href="../assets/img/hero.svg" type="image/svg+xml" />
+        <link href="../assets/img/hero.svg" rel="icon" type="image/svg+xml" />
         <link
-            rel="icon"
             href="../assets/img/hero_48.png"
-            type="image/png"
-            sizes="48x48"
-        />
-        <link
             rel="icon"
-            href="../assets/img/hero_192.png"
+            sizes="48x48"
             type="image/png"
-            sizes="192x192"
         />
         <link
-            rel="apple-touch-icon"
             href="../assets/img/hero_192.png"
+            rel="icon"
+            sizes="192x192"
+            type="image/png"
+        />
+        <link
+            href="../assets/img/hero_192.png"
+            rel="apple-touch-icon"
             sizes="192x192"
         />
-
-        <link rel="stylesheet" href="../assets/css/styles.css" />
+        <link href="../assets/css/styles.css" rel="stylesheet" />
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -233,30 +235,54 @@
                 ]
             }
         </script>
+        <link href="https://lexietattoo.pl/faq/" rel="canonical" />
+        <meta
+            content="Pytania i odpowiedzi | Lexie Tattoo"
+            property="og:title"
+        />
+        <meta
+            content="Najczęstsze pytania o zapisy, ceny, przygotowanie do sesji i pielęgnację tatuażu u Lexie Tattoo."
+            property="og:description"
+        />
+        <meta content="website" property="og:type" />
+        <meta content="https://lexietattoo.pl/faq/" property="og:url" />
+        <meta
+            content="https://lexietattoo.pl/assets/img/ig_profile_pic.jpg"
+            property="og:image"
+        />
+        <meta content="Lexie Tattoo" property="og:site_name" />
+        <meta content="pl_PL" property="og:locale" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta
+            content="Pytania i odpowiedzi | Lexie Tattoo"
+            name="twitter:title"
+        />
+        <meta
+            content="Najczęstsze pytania o zapisy, ceny, przygotowanie do sesji i pielęgnację tatuażu u Lexie Tattoo."
+            name="twitter:description"
+        />
+        <meta content="#3d352c" name="theme-color" />
     </head>
-
     <body>
         <header class="site-header">
             <div class="container">
-                <nav class="nav" aria-label="Nawigacja główna" data-nav>
+                <nav aria-label="Nawigacja główna" class="nav" data-nav="">
                     <button
-                        class="nav__toggle"
-                        type="button"
                         aria-controls="navLinks"
                         aria-expanded="false"
+                        class="nav__toggle"
+                        type="button"
                     >
                         <span class="sr-only">Menu</span>
-                        <span class="nav__toggleIcon" aria-hidden="true"></span>
+                        <span aria-hidden="true" class="nav__toggleIcon"></span>
                     </button>
-
-                    <div class="nav__links" id="navLinks" data-nav-links>
+                    <div class="nav__links" data-nav-links="" id="navLinks">
                         <a href="../">Strona główna</a>
                         <a href="../portfolio/">Portfolio</a>
                         <a href="../available_designs/">Wolne wzory</a>
-                        <a href="./" aria-current="page">FAQ</a>
+                        <a aria-current="page" href="./">FAQ</a>
                         <a href="../about/">O mnie</a>
                     </div>
-
                     <div class="nav__cta">
                         <a class="btn btn--primary" href="../#contact"
                             >Zapisz się!</a
@@ -269,19 +295,19 @@
             <section class="section section--page">
                 <div class="container">
                     <h1 class="page-title">Pytania i Odpowiedzi</h1>
-                    <div class="faq" data-faq>
-                        <article class="faq__item" data-faq-item>
+                    <div class="faq" data-faq="">
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="true"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="true"
                             >
                                 Jak umówić się na tatuaż?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Napisz do mnie na Instagramie lub przez
@@ -305,12 +331,13 @@
                                         <a
                                             class="btn btn--ghost"
                                             href="https://instagram.com/lexietattoo"
+                                            rel="noopener noreferrer"
                                             target="_blank"
                                         >
                                             <svg
                                                 class="icon icon--ig"
                                                 fill="currentColor"
-                                                viewbox="0 0 16 16"
+                                                viewBox="0 0 16 16"
                                                 xmlns="http://www.w3.org/2000/svg"
                                             >
                                                 <path
@@ -328,19 +355,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Ile kosztuje tatuaż?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Cena zależy głównie od wielkości,
@@ -357,19 +383,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy tatuaż boli?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Odczuwanie bólu jest indywidualne i
@@ -386,19 +411,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy mogę przynieść własny projekt?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Tak, nawet prosty szkic jest często dla
@@ -408,19 +432,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Jak długo goi się tatuaż?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Wstępne gojenie trwa zazwyczaj około 2-3
@@ -436,19 +459,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Jak przygotować się do sesji?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <strong>Ty:</strong>
                                     <p>
@@ -509,19 +531,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Pielęgnacja świeżego tatuażu
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <ul
                                         class="faq-list"
@@ -538,23 +559,23 @@
                                             Naklejkę zdejmuj delikatnie,
                                             najlepiej po dłuższym prysznicu.
                                             Następnie:
+                                            <ul class="faq-list--star">
+                                                <li>
+                                                    tatuaż przemyj wodą z
+                                                    delikatnym mydłem
+                                                </li>
+                                                <li>
+                                                    osusz czystym ręcznikiem,
+                                                    najlepiej papierowym
+                                                </li>
+                                                <li>
+                                                    posmaruj cienką warstwą
+                                                    kremu do tatuażu (np. Neba
+                                                    lub Bephanten Baby)
+                                                </li>
+                                            </ul>
                                         </li>
 
-                                        <ul style="list-style: '✧  ">
-                                            <li>
-                                                tatuaż przemyj wodą z delikatnym
-                                                mydłem
-                                            </li>
-                                            <li>
-                                                osusz czystym ręcznikiem,
-                                                najlepiej papierowym
-                                            </li>
-                                            <li>
-                                                posmaruj cienką warstwą kremu do
-                                                tatuażu (np. Neba lub Bephanten
-                                                Baby)
-                                            </li>
-                                        </ul>
                                         <li>
                                             Przemywanie, osuszanie i smarowanie
                                             powtarzaj 2-3 dziennie przez
@@ -608,19 +629,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy potrzebny jest zadatek?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Tak, rezerwacja terminu wymaga wpłaty
@@ -631,19 +651,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy wykonujesz covery?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Bardzo rzadko, ponieważ mój styl jest
@@ -653,19 +672,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy zobaczę projekt przed wizytą?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Na sesję przychodzę z gotowym projektem
@@ -681,19 +699,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy mogę przyjść z osobą towarzyszącą?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Nie, w naszym studiu prosimy o
@@ -707,19 +724,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Co jeżeli to mój pierwszy tatuaż?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Wiele osób wykonało u mnie swoje
@@ -733,37 +749,35 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy wykonujesz tatuaże osobom niepełnoletnim?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>Nie, tatuuję tylko osoby pełnoletnie.</p>
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy można zrobić tatuaż będąc w ciąży?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Nie, ponieważ układ odpornościowy
@@ -777,19 +791,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Jakie przyjmuję formy płatności?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Za tatuaż można zapłacić gotówką,
@@ -800,19 +813,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 W jakie dni i godziny pracuję?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Studio jest czynne od wtorku do soboty,
@@ -823,19 +835,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Jak długo czeka się na termin?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Od kilku dni do miesiąca, dużo zależy od
@@ -848,19 +859,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Co jeśli spóźnię się na wizytę?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         No cóż, bez Ciebie nie zaczniemy ;) Daj
@@ -869,19 +879,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy mogę zmienić termin wizyty?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Bez utraty zadatku - zmiana musi
@@ -891,19 +900,18 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 Czy wykonujesz poprawki?
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
                                     <p>
                                         Tak, ubytki w tuszu są całkowicie
@@ -923,18 +931,16 @@
                 </div>
             </section>
         </main>
-
         <footer class="footer">
             <div class="container">
                 <div class="footer__row">
-                    <div>© <span data-year></span> Lexie Tattoo</div>
+                    <div>© <span data-year=""></span> Lexie Tattoo</div>
                     <div>
                         <a href="../terms_of_service/">Regulamin PRISM</a>
                     </div>
                 </div>
             </div>
         </footer>
-
-        <script type="module" src="../assets/js/faq.js"></script>
+        <script src="../assets/js/faq.js" type="module"></script>
     </body>
 </html>

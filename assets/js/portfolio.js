@@ -229,7 +229,10 @@ async function renderPortfolio() {
         img.src = item._resolvedSrc;
         img.alt = item.alt || "Tatuaż – praca Lexie";
         img.loading = "lazy";
+        img.fetchPriority = "low";
         img.decoding = "async";
+        if (item.width) img.width = item.width;
+        if (item.height) img.height = item.height;
 
         const tile = document.createElement("div");
         tile.className = "tile";

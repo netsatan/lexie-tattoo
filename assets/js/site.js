@@ -83,7 +83,9 @@ export function preventWidows(root = document) {
     "p, h1, h2, h3, h4, li, .hero__kicker, .muted",
   );
   nodes.forEach((el) => {
+    if (el.children.length > 0) return;
     const txt = el.textContent || "";
+    if (!txt.trim()) return;
     // Replace the last regular space with a non-breaking space.
     el.textContent = txt.replace(/\s+(\S+)\s*$/, "\u00A0$1");
   });
@@ -204,27 +206,96 @@ function validateAll({ nameEl, emailEl, msgEl }) {
 // -----------------------------
 
 let uploadcareInitPromise = null;
+let uploadcareStylesPromise = null;
+
+function ensureUploadcareStyles() {
+  if (uploadcareStylesPromise) return uploadcareStylesPromise;
+
+  uploadcareStylesPromise = new Promise((resolve, reject) => {
+    const existing = document.querySelector('link[data-uploadcare-styles="1"]');
+    if (existing) {
+      if (existing.dataset.loaded === "1") {
+        resolve(true);
+      } else {
+        existing.addEventListener("load", () => resolve(true), { once: true });
+        existing.addEventListener("error", reject, { once: true });
+      }
+      return;
+    }
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href =
+      "https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/uc-file-uploader-minimal.min.css";
+    link.dataset.uploadcareStyles = "1";
+    link.addEventListener(
+      "load",
+      () => {
+        link.dataset.loaded = "1";
+        resolve(true);
+      },
+      { once: true },
+    );
+    link.addEventListener("error", reject, { once: true });
+    document.head.appendChild(link);
+  });
+
+  return uploadcareStylesPromise;
+}
 
 async function ensureUploadcareComponents() {
   if (uploadcareInitPromise) return uploadcareInitPromise;
 
   uploadcareInitPromise = (async () => {
-    // Only load if there is at least one Uploadcare custom element on the page.
     const hasUc =
       !!qs("uc-upload-ctx-provider") || !!qs("uc-file-uploader-minimal");
-    if (!hasUc) return;
+    if (!hasUc) return false;
 
-    const UC =
-      await import("https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/file-uploader.min.js");
-    UC.defineComponents(UC);
-
-    // Wait until main element is registered.
-    await customElements.whenDefined("uc-upload-ctx-provider");
-  })().catch((err) => {
-    console.warn("Uploadcare failed to load:", err);
-  });
+    try {
+      await ensureUploadcareStyles();
+      const UC =
+        await import("https://cdn.jsdelivr.net/npm/@uploadcare/file-uploader@v1/web/file-uploader.min.js");
+      UC.defineComponents(UC);
+      await customElements.whenDefined("uc-upload-ctx-provider");
+      return true;
+    } catch (err) {
+      console.warn("Uploadcare failed to load:", err);
+      return false;
+    }
+  })();
 
   return uploadcareInitPromise;
+}
+
+function setupLazyUploadcare(fieldEl, load) {
+  if (!fieldEl || typeof load !== "function") return;
+
+  let started = false;
+  let io = null;
+
+  const start = () => {
+    if (started) return;
+    started = true;
+    io?.disconnect();
+    void load();
+  };
+
+  if ("IntersectionObserver" in window) {
+    io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) start();
+      },
+      { rootMargin: "300px 0px" },
+    );
+    io.observe(fieldEl);
+  }
+
+  ["pointerdown", "focusin", "touchstart"].forEach((eventName) => {
+    fieldEl.addEventListener(eventName, start, {
+      once: true,
+      passive: eventName !== "focusin",
+    });
+  });
 }
 
 function createUploadcareCollector(ctxEl) {
@@ -328,7 +399,7 @@ export async function setupContactForm() {
   form.setAttribute("action", GFORM_ACTION);
 
   const nameEl = qs("#name", form);
-  const emailEl = qs("#fp_email", form);
+  const emailEl = qs("#email", form);
   const msgEl = qs("#msg", form);
   const statusEl = qs(".form__status", form);
   const iframe = qs("#gformIframe");
@@ -336,11 +407,23 @@ export async function setupContactForm() {
 
   if (!nameEl || !emailEl || !msgEl) return;
 
-  // Ensure Uploadcare components are defined (only if present).
   const ctxEl = qs("#lexieUploadCtx");
-  if (ctxEl) await ensureUploadcareComponents();
+  let collector = null;
 
-  const collector = ctxEl ? createUploadcareCollector(ctxEl) : null;
+  const ensureCollector = async () => {
+    if (!ctxEl) return null;
+    if (collector) return collector;
+    const ready = await ensureUploadcareComponents();
+    if (!ready) return null;
+    collector = createUploadcareCollector(ctxEl);
+    return collector;
+  };
+
+  if (ctxEl) {
+    setupLazyUploadcare(ctxEl.closest(".field") || ctxEl, () => {
+      void ensureCollector();
+    });
+  }
 
   bindLiveValidation({ nameEl, emailEl, msgEl });
 
@@ -355,7 +438,7 @@ export async function setupContactForm() {
       if (!/Wysyłanie/i.test(statusEl.textContent || "")) return;
       setStatus("Dziękuję! Odezwę się wkrótce 💌");
       form.reset();
-      collector?.sync();
+      collector?.sync?.();
     });
   }
 
@@ -370,8 +453,8 @@ export async function setupContactForm() {
 
     setStatus("Wysyłanie…");
 
-    collector?.sync();
-    const urls = collector?.getUrls() || [];
+    collector?.sync?.();
+    const urls = collector?.getUrls ? collector.getUrls() : [];
     if (uploadUrlsEl) uploadUrlsEl.value = urls.join("\n");
 
     const trimmed = String(msgEl.value || "").trim();

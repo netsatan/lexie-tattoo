@@ -1,100 +1,123 @@
 <!doctype html>
-<html lang="pl" class="faq-page">
+
+<html class="faq-page" lang="pl">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script>
+            document.documentElement.classList.add("js");
+        </script>
         <title>Regulamin Studio | Lexie Tattoo</title>
         <meta
-          name="description"
-          content="Regulamin studia Lexie Tattoo: zasady rezerwacji terminu, zadatku, zmian terminu, spóźnień, poprawek oraz organizacji sesji."
+            content="Regulamin studia Lexie Tattoo: zasady rezerwacji terminu, zadatku, zmian terminu, spóźnień, poprawek oraz organizacji sesji."
+            name="description"
         />
-
-        <link rel="icon" href="../assets/img/hero.svg" type="image/svg+xml" />
+        <link href="../assets/img/hero.svg" rel="icon" type="image/svg+xml" />
         <link
-            rel="icon"
             href="../assets/img/hero_48.png"
-            type="image/png"
-            sizes="48x48"
-        />
-        <link
             rel="icon"
-            href="../assets/img/hero_192.png"
+            sizes="48x48"
             type="image/png"
-            sizes="192x192"
         />
         <link
-            rel="apple-touch-icon"
             href="../assets/img/hero_192.png"
+            rel="icon"
+            sizes="192x192"
+            type="image/png"
+        />
+        <link
+            href="../assets/img/hero_192.png"
+            rel="apple-touch-icon"
             sizes="192x192"
         />
-
-        <link rel="stylesheet" href="../assets/css/styles.css" />
+        <link href="../assets/css/styles.css" rel="stylesheet" />
         <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@graph": [
             {
-              "@type": "WebPage",
-              "@id": "https://lexietattoo.pl/terms_of_service/#webpage",
-              "url": "https://lexietattoo.pl/terms_of_service/",
-              "name": "Regulamin Studio | Lexie Tattoo",
-              "description": "Regulamin studia Lexie Tattoo zawierający zasady rezerwacji terminu, zadatku, zmian terminu, spóźnień, poprawek oraz organizacji sesji.",
-              "inLanguage": "pl-PL",
-              "isPartOf": {
-                "@id": "https://lexietattoo.pl/#website"
-              },
-              "about": {
-                "@id": "https://lexietattoo.pl/#tattoo-parlor"
-              },
-              "breadcrumb": {
-                "@id": "https://lexietattoo.pl/terms_of_service/#breadcrumb"
-              }
-            },
-            {
-              "@type": "BreadcrumbList",
-              "@id": "https://lexietattoo.pl/terms_of_service/#breadcrumb",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Strona główna",
-                  "item": "https://lexietattoo.pl/"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Regulamin Studio",
-                  "item": "https://lexietattoo.pl/terms_of_service/"
-                }
-              ]
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://lexietattoo.pl/terms_of_service/#webpage",
+                        "url": "https://lexietattoo.pl/terms_of_service/",
+                        "name": "Regulamin Studio | Lexie Tattoo",
+                        "description": "Regulamin studia Lexie Tattoo zawierający zasady rezerwacji terminu, zadatku, zmian terminu, spóźnień, poprawek oraz organizacji sesji.",
+                        "inLanguage": "pl-PL",
+                        "isPartOf": {
+                            "@id": "https://lexietattoo.pl/#website"
+                        },
+                        "about": {
+                            "@id": "https://lexietattoo.pl/#tattoo-parlor"
+                        },
+                        "breadcrumb": {
+                            "@id": "https://lexietattoo.pl/terms_of_service/#breadcrumb"
+                        }
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://lexietattoo.pl/terms_of_service/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Strona główna",
+                                "item": "https://lexietattoo.pl/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Regulamin Studio",
+                                "item": "https://lexietattoo.pl/terms_of_service/"
+                            }
+                        ]
+                    }
+                ]
             }
-          ]
-        }
         </script>
+        <link href="https://lexietattoo.pl/terms_of_service/" rel="canonical" />
+        <meta content="Regulamin Studio | Lexie Tattoo" property="og:title" />
+        <meta
+            content="Regulamin studia Lexie Tattoo: zasady rezerwacji terminu, zadatku, zmian terminu, spóźnień, poprawek oraz organizacji sesji."
+            property="og:description"
+        />
+        <meta content="website" property="og:type" />
+        <meta
+            content="https://lexietattoo.pl/terms_of_service/"
+            property="og:url"
+        />
+        <meta
+            content="https://lexietattoo.pl/assets/img/ig_profile_pic.jpg"
+            property="og:image"
+        />
+        <meta content="Lexie Tattoo" property="og:site_name" />
+        <meta content="pl_PL" property="og:locale" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="Regulamin Studio | Lexie Tattoo" name="twitter:title" />
+        <meta
+            content="Regulamin studia Lexie Tattoo: zasady rezerwacji terminu, zadatku, zmian terminu, spóźnień, poprawek oraz organizacji sesji."
+            name="twitter:description"
+        />
+        <meta content="#3d352c" name="theme-color" />
     </head>
-
     <body>
         <header class="site-header">
             <div class="container">
-                <nav class="nav" aria-label="Nawigacja główna" data-nav>
+                <nav aria-label="Nawigacja główna" class="nav" data-nav="">
                     <button
-                        class="nav__toggle"
-                        type="button"
                         aria-controls="navLinks"
                         aria-expanded="false"
+                        class="nav__toggle"
+                        type="button"
                     >
                         <span class="sr-only">Menu</span>
-                        <span class="nav__toggleIcon" aria-hidden="true"></span>
+                        <span aria-hidden="true" class="nav__toggleIcon"></span>
                     </button>
-
-                    <div class="nav__links" id="navLinks" data-nav-links>
+                    <div class="nav__links" data-nav-links="" id="navLinks">
                         <a href="../">Strona główna</a>
                         <a href="../portfolio/">Portfolio</a>
                         <a href="../available_designs/">Wolne wzory</a>
                         <a href="../faq/">FAQ</a>
                         <a href="../about/">O mnie</a>
                     </div>
-
                     <div class="nav__cta">
                         <a class="btn btn--primary" href="../#contact"
                             >Zapisz się!</a
@@ -106,27 +129,22 @@
         <main>
             <section class="section section--page">
                 <div class="container">
-                    <h1 class="page-title"">
-                        Regulamin Studio
-                    </h1>
-                    <div class="faq" data-faq>
-                        <article class="faq__item" data-faq-item>
+                    <h1 class="page-title">Regulamin Studio</h1>
+                    <div class="faq" data-faq="">
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="true"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="true"
                             >
                                 PRISM – Regulamin
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
-                                    <ul
-                                        class="faq-list"
-                                        style="list-style: '✧  "
-                                    >
+                                    <ul class="faq-list faq-list--star">
                                         <li>
                                             Wpłata zadatku wiąże się z
                                             akceptacją regulaminu.
@@ -153,23 +171,23 @@
                                             może się jednak okazać, że artysta
                                             nie chce wykonać nowego projektu.
                                         </li>
-                                        <br />
-                                        <p>
+
+                                        <li>
                                             Jako studio spróbujemy wtedy
                                             przekierować Ciebie jako klienta do
                                             innego artysty, który chciałby ten
                                             projekt wykonać lub wrócimy do
                                             pierwotnego pomysłu, na który była
                                             akceptacja pierwszego artysty.
-                                        </p>
-                                        <br />
-                                        <p>
+                                        </li>
+
+                                        <li>
                                             W przypadku braku porozumienia
                                             zadatek przepada – jest to
                                             rekompensata dla artysty za
                                             poświęcony czas.
-                                        </p>
-                                        <br />
+                                        </li>
+
                                         <li>
                                             W przypadku braku kontaktu ze strony
                                             zainteresowanego rezerwacja terminu
@@ -236,23 +254,20 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="faq__item" data-faq-item>
+                        <article class="faq__item" data-faq-item="">
                             <button
+                                aria-expanded="false"
                                 class="faq__q"
                                 type="button"
-                                aria-expanded="false"
                             >
                                 PRISM – Terms and conditions
-                                <span class="faq__icon" aria-hidden="true"
+                                <span aria-hidden="true" class="faq__icon"
                                     >+</span
                                 >
                             </button>
-                            <div class="faq__a" data-faq-panel>
+                            <div class="faq__a" data-faq-panel="">
                                 <div class="faq__aInner">
-                                    <ul
-                                        class="faq-list"
-                                        style="list-style: '✧  "
-                                    >
+                                    <ul class="faq-list faq-list--star">
                                         <li>
                                             Payment of deposit is equivalent to
                                             accepting the terms and conditions.
@@ -285,22 +300,22 @@
                                             either accept or deny the new idea
                                             proposed by customer.
                                         </li>
-                                        <br />
-                                        <p>
+
+                                        <li>
                                             Upon refusal of new idea – studio
                                             will try to find new artist who can
                                             make this project or come back to
                                             first idea (that was accepted in
                                             first place).
-                                        </p>
-                                        <br />
-                                        <p>
+                                        </li>
+
+                                        <li>
                                             In case of not finding agreement –
                                             deposit is non-refundable and is
                                             treated as compensation for time of
                                             work of the artist.
-                                        </p>
-                                        <br />
+                                        </li>
+
                                         <li>
                                             In case of lack of communication
                                             from customer side – the session is
@@ -375,16 +390,14 @@
                 </div>
             </section>
         </main>
-
         <footer class="footer">
             <div class="container">
                 <div class="footer__row">
-                    <div>© <span data-year></span> Lexie Tattoo</div>
+                    <div>© <span data-year=""></span> Lexie Tattoo</div>
                     <div><a href="./">Regulamin PRISM</a></div>
                 </div>
             </div>
         </footer>
-
-        <script type="module" src="../assets/js/faq.js"></script>
+        <script src="../assets/js/faq.js" type="module"></script>
     </body>
 </html>
