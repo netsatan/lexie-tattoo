@@ -182,6 +182,35 @@ body::before {
     background-blend-mode: overlay;
 }
 
+/* Independent botanical edges disappear beyond the viewport, rather than
+   exposing cut stems where a vertical tile repeats. Keep them in the gutters. */
+@media (min-width: 1280px) {
+    body:not(.admin-page)::after {
+        /* At most 360 CSS pixels per image: the 724px source stays sharp
+           on Retina displays, including very wide desktop viewports. */
+        --vine-width: clamp(0px, calc((100vw - var(--container)) / 2 - 16px), 180px);
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-color: color-mix(in srgb, var(--text) 20%, transparent);
+        -webkit-mask-image: url("../img/botanical-etched-left.png"), url("../img/botanical-etched-right.png");
+        mask-image: url("../img/botanical-etched-left.png"), url("../img/botanical-etched-right.png");
+        -webkit-mask-size: calc(var(--vine-width) * 2) auto;
+        mask-size: calc(var(--vine-width) * 2) auto;
+        /* Preserve the reference's engraved leaf shading as well as its
+           brighter veins; an alpha-only mask would flatten these tones. */
+        mask-mode: luminance;
+        -webkit-mask-position: left calc(var(--vine-width) * -.55) top -180px,
+            right calc(var(--vine-width) * -.55) top -350px;
+        mask-position: left calc(var(--vine-width) * -.55) top -180px,
+            right calc(var(--vine-width) * -.55) top -350px;
+        -webkit-mask-repeat: repeat-y;
+        mask-repeat: repeat-y;
+    }
+}
+
 /* Keep the content stacking order for the header and overlays. */
 
 body > header,
